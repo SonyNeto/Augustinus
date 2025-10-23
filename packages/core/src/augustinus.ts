@@ -24,7 +24,7 @@ function replaceFromEnd(input: string, find: string, replaceWith: string, limit?
 // Lógica de posicionamento das notas nas sílabas de um salmo
 function psalmLogic(input: string[], notes: string[]) { //Função que aplica a lógica no array de sílabas com as tônicas marcadas com #
     const i = input.length;
-    const tonicNote = notes.filter(note => note.includes("r1")).reverse().map(note => note.replace("r1", "")); // Procura pela nota da tônica melódica
+    const tonicNote = notes.filter(note => note.includes("r1")).reverse()//.map(note => note.replace("r1", "")); // Procura pela nota da tônica melódica
     const replaceAt = (index: number, value: string) => {input[index] = input[index].replace("@", value)}; // Função menor, parecida com a replaceFromEnd, mas para array
     const isTonic = (index: number): boolean => input[index]?.includes("#") ?? false; // Função que será usada mais tarde
     const tonicIndex = i - input.findLastIndex(syllable => syllable.includes("#")); // Procura pelo índice da primeira sílaba tônica de trás pra frente
@@ -54,7 +54,7 @@ function psalmLogic(input: string[], notes: string[]) { //Função que aplica a 
 };
 
 function applyModel(lyrics: string, gabcModel: string, psalm: boolean): string {
-    const unstressedMonosyllables: string[] = ["a", "e", "o", "as", "os", "um", "uns", "de", "do", "da", "dos", "das", "em", "no", "na", "nos", "nas", "que", "me", "te", "se", "lhe", "lhes", "com", "por", "sem", "seu", "seus", "meu", "meus", "teu", "teus", "eu", "tu", "mas", "ou", "sou", "foi", "ao", "aos"];
+    const unstressedMonosyllables: string[] = ["a", "e", "o", "as", "os", "um", "uns", "de", "do", "da", "dos", "das", "em", "no", "na", "nos", "nas", "que", "me", "te", "se", "lhe", "lhes", "com", "por", "sem", "seu", "seus", "meu", "meus", "teu", "teus", "eu", "tu", "mas", "ou", "sou", "foi", "ao", "aos", "pois", "diz"];
     const taggedParts: string[] = [];
     const placeholder = "||TAGGED_PART||";
     
@@ -103,11 +103,11 @@ function applyModel(lyrics: string, gabcModel: string, psalm: boolean): string {
         const currentSyllable = gabcOutputArray[i] || "";
         const nextSyllable = gabcOutputArray[i + 1] || "";
 
-        const isSyllableElidable = /^(?!\s*#).*?[aeiou]@?$/i.test(currentSyllable);
+        const isSyllableElidable = /^(?!\s*#).*?[aeio]@?$/i.test(currentSyllable);
         const isNextSyllableElidable = /^\s+(#?[aeiou])/i.test(nextSyllable);
 
         if (isSyllableElidable && isNextSyllableElidable) {
-            gabcOutputArray[i] = currentSyllable.replace(/@/g, "") + nextSyllable;
+            gabcOutputArray[i] = currentSyllable.replace(/@/g, "") + "⏝" + nextSyllable;
             gabcOutputArray.splice(i + 1, 1);
             i--;
         }
