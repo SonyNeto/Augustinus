@@ -24,33 +24,37 @@ function replaceFromEnd(input: string, find: string, replaceWith: string, limit?
 // Lógica de posicionamento das notas nas sílabas de um salmo
 function psalmLogic(input: string[], notes: string[]) { //Função que aplica a lógica no array de sílabas com as tônicas marcadas com #
     const i = input.length;
-    const tonicNote = notes.filter(note => note.includes("r1")).reverse()//.map(note => note.replace("r1", "")); // Procura pela nota da tônica melódica
+    let tonicNote = notes.filter(note => note.includes("r1")).reverse().map(note => note.replace("r1", "")); // Procura pela nota da tônica melódica
     const replaceAt = (index: number, value: string) => {input[index] = input[index].replace("@", value)}; // Função menor, parecida com a replaceFromEnd, mas para array
     const isTonic = (index: number): boolean => input[index]?.includes("#") ?? false; // Função que será usada mais tarde
     const tonicIndex = i - input.findLastIndex(syllable => syllable.includes("#")); // Procura pelo índice da primeira sílaba tônica de trás pra frente
     notes = notes.map(notes => notes/*.replace("r1", "")*/.replace("r", "") || ""); // Limpa as marcações de acento das notas
-    switch (tonicIndex) {
-        case 1:
-            replaceAt(i - 1, tonicNote[0].replace(")", ""));
-            input[i - 1] += notes[notes.length - 1].replace("(", "");
-            break;
-            
-        case 2:
-            replaceAt(i - 2, tonicNote[0]);
-            replaceAt(i - 1, notes[notes.length - 1]);
-            break;
+    if (tonicNote.length > 0) {
+        switch (tonicIndex) {
+            case 1:
+                replaceAt(i - 1, tonicNote[0].replace(")", ""));
+                input[i - 1] += notes[notes.length - 1].replace("(", "");
+                break;
+                
+            case 2:
+                replaceAt(i - 2, tonicNote[0]);
+                replaceAt(i - 1, notes[notes.length - 1]);
+                break;
 
-        case 3:
-            replaceAt(i - 3, tonicNote[1]? tonicNote[1] : tonicNote[0]);
-            replaceAt(i - 2, notes[notes.length - 2]);
-            replaceAt(i - 1, notes[notes.length - 1]);
-            break;
+            case 3:
+                replaceAt(i - 3, tonicNote[1]? tonicNote[1] : tonicNote[0]);
+                replaceAt(i - 2, notes[notes.length - 2]);
+                replaceAt(i - 1, notes[notes.length - 1]);
+                break;
 
-        default:
-            replaceAt(i - 2, tonicNote[0]);
-            replaceAt(i - 1, notes[notes.length - 1]);
-            break;
-    }  
+            default:
+                replaceAt(i - 2, tonicNote[0]);
+                replaceAt(i - 1, notes[notes.length - 1]);
+                break;
+            }  
+    }else { // Para o caso de não ter tônica melódica (tom Cc)
+        replaceAt(i - 1, notes[notes.length - 1]);
+    }
 };
 
 function applyModel(lyrics: string, gabcModel: string, psalm: boolean): string {
@@ -80,7 +84,7 @@ function applyModel(lyrics: string, gabcModel: string, psalm: boolean): string {
     const extractedTripletRootNote: string = "(" + (validModelSegments[1] || "").trim().charAt(1) + ")";
     const suffixString: string = (validModelSegments[2] || "").trim();
     let isDynamic: boolean = false;
-    if (suffixString.includes("r1")) {
+    if (suffixString.includes("r1") || psalm) {
         isDynamic = true
     }
     const wordCount: number = wordsWithNotePlaceholders.length;
@@ -119,8 +123,8 @@ function applyModel(lyrics: string, gabcModel: string, psalm: boolean): string {
             let firstAccentIndex = notes.findIndex(note => note.includes("r1"));
             let secondAccentIndex = notes.findIndex((note, i) => i > firstAccentIndex + 1 && note.includes("r1"));
             let preNotesIndex = (firstAccentIndex - 1) >= 0 ? (firstAccentIndex - 1) : false;
-            // Se só tiver um acento, mantém um único grupo
 
+            // Se só tiver um acento, mantém um único grupo
             let firstAccentNotes = secondAccentIndex === -1 ? notes.slice(firstAccentIndex) : notes.slice(firstAccentIndex, secondAccentIndex);
             let secondAccentNotes = secondAccentIndex === -1 ? [] : notes.slice(secondAccentIndex);
             let preNotes = preNotesIndex !== false ? notes.slice(0, preNotesIndex + 1) : false;

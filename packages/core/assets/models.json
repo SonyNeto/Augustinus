@@ -265,9 +265,9 @@
         "replace": []
     },
     {
-        "name": "1D",
+        "name": "1d3",
         "type": "salmo",
-        "tom": "1D",
+        "tom": "1d3",
         "optional_end": "",
         "optional_start": "(f) (gh)",
         "start": "(c4)",
@@ -279,7 +279,7 @@
             },
             {
                 "symbol": "+",
-                "gabc": "(h) (hr hr hr) (hr1) (gr) (g) (;)"
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g.) (;)"
             },
             {
                 "symbol": "\n",
@@ -290,9 +290,9 @@
         "replace": []
     },
     {
-        "name": "1D-",
+        "name": "1d2",
         "type": "salmo",
-        "tom": "1D-",
+        "tom": "1d2",
         "optional_end": "",
         "optional_start": "(f) (gh)",
         "start": "(c4)",
@@ -304,7 +304,7 @@
             },
             {
                 "symbol": "+",
-                "gabc": "(h) (hr hr hr) (hr1) (gr) (g) (;)"
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g.) (;)"
             },
             {
                 "symbol": "\n",
@@ -315,9 +315,9 @@
         "replace": []
     },
     {
-        "name": "1D2",
+        "name": "1d1",
         "type": "salmo",
-        "tom": "1D2",
+        "tom": "1d1",
         "optional_end": "",
         "optional_start": "(f) (gh)",
         "start": "(c4)",
@@ -329,7 +329,7 @@
             },
             {
                 "symbol": "+",
-                "gabc": "(h) (hr hr hr) (hr1) (gr) (g) (;)"
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g.) (;)"
             },
             {
                 "symbol": "\n",
@@ -346,7 +346,7 @@
         "optional_end": "",
         "optional_start": "(f) (gh)",
         "start": "(c4)",
-        "default": "(h) (hr hr hr) (g) (f) (ghr1) (gr) (g.f.) (::)",
+        "default": "(h) (hr hr hr) (g) (f) (ghr1) (gr) (gf..) (::)",
         "patterns": [
             {
                 "symbol": "*",
@@ -354,11 +354,11 @@
             },
             {
                 "symbol": "+",
-                "gabc": "(h) (hr hr hr) (hr1) (gr) (g) (;)"
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g.) (;)"
             },
             {
                 "symbol": "\n",
-                "gabc": "(h) (hr hr hr) (g) (f) (ghr1) (gr) (g.f.) (gvFED.) (::)"
+                "gabc": "(h) (hr hr hr) (g) (f) (ghr1) (gr) (gf..) (gvFED.) (::)"
             }
         ],
         "find": [],
@@ -379,7 +379,7 @@
             },
             {
                 "symbol": "+",
-                "gabc": "(h) (hr hr hr) (hr1) (gr) (g) (;)"
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g.) (;)"
             },
             {
                 "symbol": "\n",
@@ -404,7 +404,7 @@
             },
             {
                 "symbol": "+",
-                "gabc": "(h) (hr hr hr) (hr1) (gr) (g) (;)"
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g.) (;)"
             },
             {
                 "symbol": "\n",
@@ -421,7 +421,7 @@
         "optional_end": "",
         "optional_start": "(f) (gh)",
         "start": "(c4)",
-        "default": "(h) (hr hr hr) (g) (f) (gr1) (gr) (g.) (::)",
+        "default": "(h) (hr hr hr) (g) (f) (hr1) (gr) (g.) (::)",
         "patterns": [
             {
                 "symbol": "*",
@@ -429,11 +429,11 @@
             },
             {
                 "symbol": "+",
-                "gabc": "(h) (hr hr hr) (hr1) (gr) (g) (;)"
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g.) (;)"
             },
             {
                 "symbol": "\n",
-                "gabc": "(h) (hr hr hr) (g) (f) (gr1) (gr) (g.) (::)"
+                "gabc": "(h) (hr hr hr) (g) (f) (hr1) (gr) (g.) (::)"
             }
         ],
         "find": [],
@@ -446,7 +446,7 @@
         "optional_end": "",
         "optional_start": "(f) (gh)",
         "start": "(c4)",
-        "default": "(h) (hr hr hr) (g) (f) (gr1) (hr) (gh.) (::)",
+        "default": "(h) (hr hr hr) (g) (f) (gr1) (hr) (h.) (::)",
         "patterns": [
             {
                 "symbol": "*",
@@ -454,7 +454,7 @@
             },
             {
                 "symbol": "+",
-                "gabc": "(h) (hr hr hr) (hr1) (gr) (g) (;)"
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g.) (;)"
             },
             {
                 "symbol": "\n",
@@ -471,7 +471,7 @@
         "optional_end": "",
         "optional_start": "(f) (gh)",
         "start": "(c4)",
-        "default": "(h) (hr hr hr) (g) (f) (gr1) (gr) (g.h.) (::)",
+        "default": "(h) (hr hr hr) (g) (f) (gr1) (gr) (goh..) (::)",
         "patterns": [
             {
                 "symbol": "*",
@@ -479,36 +479,11 @@
             },
             {
                 "symbol": "+",
-                "gabc": "(h) (hr hr hr) (hr1) (gr) (g) (;)"
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g.) (;)"
             },
             {
                 "symbol": "\n",
-                "gabc": "(h) (hr hr hr) (g) (f) (gr1) (gr) (g.h.) (::)"
-            }
-        ],
-        "find": [],
-        "replace": []
-    },
-    {
-        "name": "1a3",
-        "type": "salmo",
-        "tom": "1a3",
-        "optional_end": "",
-        "optional_start": "(f) (gh)",
-        "start": "(c4)",
-        "default": "(h) (hr hr hr) (g) (f) (ghr1) (gr) (g.h.) (::)",
-        "patterns": [
-            {
-                "symbol": "*",
-                "gabc": "(h) (hr hr hr) (ixir1) (hr) (h) (gr1) (hr) (h.) (:)"
-            },
-            {
-                "symbol": "+",
-                "gabc": "(h) (hr hr hr) (hr1) (gr) (g) (;)"
-            },
-            {
-                "symbol": "\n",
-                "gabc": "(h) (hr hr hr) (g) (f) (ghr1) (gr) (g.h.) (::)"
+                "gabc": "(h) (hr hr hr) (g) (f) (gr1) (gr) (goh..) (::)"
             }
         ],
         "find": [],
@@ -521,7 +496,7 @@
         "optional_end": "",
         "optional_start": "(e) (f)",
         "start": "(f3)",
-        "default": "(h) (hr hr hr) (g) (er1) (fr) (f.) (::)",
+        "default": "(h) (hr hr hr) (g) (er1) (efr1) (f.) (::)",
         "patterns": [
             {
                 "symbol": "*",
@@ -529,11 +504,86 @@
             },
             {
                 "symbol": "+",
-                "gabc": "(h) (hr hr hr) (hr1) (fr) (f) (;)"
+                "gabc": "(h) (hr hr hr) (hr1) (fr) (f.) (;)"
             },
             {
                 "symbol": "\n",
-                "gabc": "(h) (hr hr hr) (g) (er1) (fr) (f.) (::)"
+                "gabc": "(h) (hr hr hr) (g) (er1) (efr1) (f.) (::)"
+            }
+        ],
+        "find": [],
+        "replace": []
+    },
+    {
+        "name": "2*g",
+        "type": "salmo",
+        "tom": "2*g",
+        "optional_end": "",
+        "optional_start": "(i) (hi)",
+        "start": "(f3)",
+        "default": "(i) (ir ir ir) (h) (i) (j) (hr1) (ir) (i.) (::)",
+        "patterns": [
+            {
+                "symbol": "*",
+                "gabc": "(i) (ir ir ir) (h) (i) (jr1) (ir) (i.) (:)"
+            },
+            {
+                "symbol": "+",
+                "gabc": "(i) (ir ir ir) (ir1) (hr) (h.) (;)"
+            },
+            {
+                "symbol": "\n",
+                "gabc": "(i) (ir ir ir) (h) (i) (j) (hr1) (ir) (i.) (::)"
+            }
+        ],
+        "find": [],
+        "replace": []
+    },
+    {
+        "name": "2*f",
+        "type": "salmo",
+        "tom": "2*f",
+        "optional_end": "",
+        "optional_start": "(i) (hi)",
+        "start": "(f3)",
+        "default": "(i) (ir ir ir) (ir1) (hr) (h.) (;)",
+        "patterns": [
+            {
+                "symbol": "*",
+                "gabc": "(i) (ir ir ir) (h) (i) (jr1) (ir) (i.) (:)"
+            },
+            {
+                "symbol": "+",
+                "gabc": "(i) (ir ir ir) (ir1) (hr) (h.) (;)"
+            },
+            {
+                "symbol": "\n",
+                "gabc": "(i) (ir ir ir) (ir1) (hr) (h.) (;)"
+            }
+        ],
+        "find": [],
+        "replace": []
+    },
+      {
+        "name": "2*d",
+        "type": "salmo",
+        "tom": "2*d",
+        "optional_end": "",
+        "optional_start": "(i) (hi)",
+        "start": "(f3)",
+        "default": "(i) (ir ir ir) (h) (i) (j) (hr1) (fr) (f.) (::)",
+        "patterns": [
+            {
+                "symbol": "*",
+                "gabc": "(i) (ir ir ir) (h) (i) (jr1) (ir) (i.) (:)"
+            },
+            {
+                "symbol": "+",
+                "gabc": "(i) (ir ir ir) (ir1) (hr) (h.) (;)"
+            },
+            {
+                "symbol": "\n",
+                "gabc": "(i) (ir ir ir) (h) (i) (j) (hr1) (fr) (f.) (::)"
             }
         ],
         "find": [],
@@ -544,21 +594,21 @@
         "type": "salmo",
         "tom": "3b",
         "optional_end": "",
-        "optional_start": "(g) (hj)",
+        "optional_start": "(g) (hi)",
         "start": "(c4) ",
-        "default": "(j) (jr jr jr) (h) (jr1) (jr) (i.) (::)",
+        "default": "(i) (ir ir ir) (jr1) (hr) (h) (jr1) (jr) (i.) (::)",
         "patterns": [
             {
                 "symbol": "*",
-                "gabc": "(j) (jr jr jr) (kr1) (jr) (j) (jr1) (ihr1) (j.) (:)"
+                "gabc": "(i) (ir ir ir) (kr1) (jr) (j) (jr1) (ihr1) (j.) (:)"
             },
             {
                 "symbol": "+",
-                "gabc": "(j) (jr jr jr) (jr1) (hr) (h.) (;)"
+                "gabc": "(i) (ir ir ir) (ir1) (hr) (h.) (;)"
             },
             {
                 "symbol": "\n",
-                "gabc": "(j) (jr jr jr) (h) (jr1) (jr) (i.) (::)"
+                "gabc": "(i) (ir ir ir) (jr1) (hr) (h) (jr1) (jr) (i.) (::)"
             }
         ],
         "find": [],
@@ -569,21 +619,21 @@
         "type": "salmo",
         "tom": "3a",
         "optional_end": "",
-        "optional_start": "(g) (hj)",
+        "optional_start": "(g) (hi)",
         "start": "(c4) ",
-        "default": "(j) (jr jr jr) (h) (jr1) (jr) (i.h.) (::)",
+        "default": "(i) (ir ir ir) (jr1) (hr) (h) (jr1) (jr) (ih..) (::)",
         "patterns": [
             {
                 "symbol": "*",
-                "gabc": "(j) (jr jr jr) (kr1) (jr) (j) (jr1) (ihr1) (j.) (:)"
+                "gabc": "(i) (ir ir ir) (kr1) (jr) (j) (jr1) (ihr1) (j.) (:)"
             },
             {
                 "symbol": "+",
-                "gabc": "(j) (jr jr jr) (jr1) (hr) (h.) (;)"
+                "gabc": "(i) (ir ir ir) (ir1) (hr) (h.) (;)"
             },
             {
                 "symbol": "\n",
-                "gabc": "(j) (jr jr jr) (h) (jr1) (jr) (i.h.) (::)"
+                "gabc": "(i) (ir ir ir) (jr1) (hr) (h) (jr1) (jr) (ih..) (::)"
             }
         ],
         "find": [],
@@ -594,21 +644,21 @@
         "type": "salmo",
         "tom": "3a2",
         "optional_end": "",
-        "optional_start": "(g) (hj)",
+        "optional_start": "(g) (hi)",
         "start": "(c4) ",
-        "default": "(j) (jr jr jr) (ji) (hi) (hr1) (gr) (g.h.) (::)",
+        "default": "(i) (ir ir ir) (jr1) (hr) (hi) (hr1) (gr) (goh..) (::)",
         "patterns": [
             {
                 "symbol": "*",
-                "gabc": "(j) (jr jr jr) (kr1) (jr) (j) (jr1) (ihr1) (j.) (:)"
+                "gabc": "(i) (ir ir ir) (kr1) (jr) (j) (jr1) (ihr1) (j.) (:)"
             },
             {
                 "symbol": "+",
-                "gabc": "(j) (jr jr jr) (jr1) (hr) (h.) (;)"
+                "gabc": "(i) (ir ir ir) (ir1) (hr) (h.) (;)"
             },
             {
                 "symbol": "\n",
-                "gabc": "(j) (jr jr jr) (ji) (hi) (hr1) (gr) (g.h.) (::)"
+                "gabc": "(i) (ir ir ir) (jr1) (hr) (hi) (hr1) (gr) (goh..) (::)"
             }
         ],
         "find": [],
@@ -619,46 +669,21 @@
         "type": "salmo",
         "tom": "3g",
         "optional_end": "",
-        "optional_start": "(g) (hj)",
+        "optional_start": "(g) (hi)",
         "start": "(c4) ",
-        "default": "(j) (jr jr jr) (ji) (hi) (hr1) (gr) (g.) (::)",
+        "default": "(i) (ir ir ir) (jr1) (hr) (hi) (hr1) (gr) (g.) (::)",
         "patterns": [
             {
                 "symbol": "*",
-                "gabc": "(j) (jr jr jr) (kr1) (jr) (j) (jr1) (ihr1) (j.) (:)"
+                "gabc": "(i) (ir ir ir) (kr1) (jr) (j) (jr1) (ihr1) (j.) (:)"
             },
             {
                 "symbol": "+",
-                "gabc": "(j) (jr jr jr) (jr1) (hr) (h.) (;)"
+                "gabc": "(i) (ir ir ir) (ir1) (hr) (h.) (;)"
             },
             {
                 "symbol": "\n",
-                "gabc": "(j) (jr jr jr) (ji) (hi) (hr1) (gr) (g.) (::)"
-            }
-        ],
-        "find": [],
-        "replace": []
-    },
-    {
-        "name": "3g2",
-        "type": "salmo",
-        "tom": "3g2",
-        "optional_end": "",
-        "optional_start": "(g) (hj)",
-        "start": "(c4) ",
-        "default": "(j) (jr jr jr) (h) (j) (i) (hr1) (gr) (g.) (::)",
-        "patterns": [
-            {
-                "symbol": "*",
-                "gabc": "(j) (jr jr jr) (kr1) (jr) (j) (jr1) (ihr1) (j.) (:)"
-            },
-            {
-                "symbol": "+",
-                "gabc": "(j) (jr jr jr) (jr1) (hr) (h.) (;)"
-            },
-            {
-                "symbol": "\n",
-                "gabc": "(j) (jr jr jr) (h) (j) (i) (hr1) (gr) (g.) (::)"
+                "gabc": "(i) (ir ir ir) (jr1) (hr) (hi) (hr1) (gr) (g.) (::)"
             }
         ],
         "find": [],
@@ -690,9 +715,9 @@
         "replace": []
     },
     {
-        "name": "4E",
+        "name": "4e",
         "type": "salmo",
-        "tom": "4E",
+        "tom": "4e",
         "optional_end": "",
         "optional_start": "(h) (gh)",
         "start": "(c4) ",
@@ -715,109 +740,59 @@
         "replace": []
     },
     {
-        "name": "4altc",
+        "name": "4a",
         "type": "salmo",
-        "tom": "4altc",
+        "tom": "4a",
         "optional_end": "",
-        "optional_start": "(i) (hi)",
-        "start": "(c3) ",
-        "default": "(i) (ir ir ir) (ir1) (hr) (h.) (::)",
+        "optional_start": "(h) (gh)",
+        "start": "(c4) ",
+        "default": "(h) (hr hr hr) (g) (h) (i) (gr1) (hr) (h.) (::)",
         "patterns": [
             {
                 "symbol": "*",
-                "gabc": "(i) (ir ir ir) (h) (i) (jr1) (ir) (i.) (:)"
+                "gabc": "(h) (hr hr hr) (g) (h) (ir1) (hr) (h.) (:)"
             },
             {
                 "symbol": "+",
-                "gabc": "(i) (ir ir ir) (ir1) (hr) (h.) (;)"
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g.) (;)"
             },
             {
                 "symbol": "\n",
-                "gabc": "(i) (ir ir ir) (ir1) (hr) (h.) (::)"
+                "gabc": "(h) (hr hr hr) (g) (h) (i) (gr1) (hr) (h.) (::)"
             }
         ],
         "find": [],
         "replace": []
     },
     {
-        "name": "4altA",
+        "name": "4*",
         "type": "salmo",
-        "tom": "4altA",
+        "tom": "4*",
         "optional_end": "",
-        "optional_start": "(i) (hi)",
-        "start": "(c3) ",
-        "default": "(i) (ir ir ir) (h) (i) (j) (hr1) (fr) (f.) (::)",
+        "optional_start": "(g) (fg)",
+        "start": "(c4) ",
+        "default": "(g) (gr gr gr) (hr1) (fr) (f) (gr1) (er) (e.) (::)",
         "patterns": [
             {
                 "symbol": "*",
-                "gabc": "(i) (ir ir ir) (h) (i) (jr1) (ir) (i.) (:)"
+                "gabc": "(g) (gr gr gr) (f) (g) (hr1) (gr) (g.) (:)"
             },
             {
                 "symbol": "+",
-                "gabc": "(i) (ir ir ir) (ir1) (hr) (h.) (;)"
+                "gabc": "(g) (gr gr gr) (gr1) (fr) (f.) (;)"
             },
             {
                 "symbol": "\n",
-                "gabc": "(i) (ir ir ir) (h) (i) (j) (hr1) (fr) (f.) (::)"
+                "gabc": "(g) (gr gr gr) (hr1) (fr) (f) (gr1) (er) (e.) (::)"
             }
         ],
         "find": [],
         "replace": []
     },
     {
-        "name": "4altA*",
+        "name": "5a",
         "type": "salmo",
-        "tom": "4altA*",
-        "optional_end": "",
-        "optional_start": "(i) (hi)",
-        "start": "(c3) ",
-        "default": "(i) (ir ir ir) (h) (i) (j) (hr1) (fr) (f.g.) (::)",
-        "patterns": [
-            {
-                "symbol": "*",
-                "gabc": "(i) (ir ir ir) (h) (i) (jr1) (ir) (i.) (:)"
-            },
-            {
-                "symbol": "+",
-                "gabc": "(i) (ir ir ir) (ir1) (hr) (h.) (;)"
-            },
-            {
-                "symbol": "\n",
-                "gabc": "(i) (ir ir ir) (h) (i) (j) (hr1) (fr) (f.g.) (::)"
-            }
-        ],
-        "find": [],
-        "replace": []
-    },
-    {
-        "name": "4altd",
-        "type": "salmo",
-        "tom": "4altd",
-        "optional_end": "",
-        "optional_start": "(i) (hi)",
-        "start": "(c3) ",
-        "default": "(i) (ir ir ir) (h) (i) (j) (hr1) (ir) (i.) (::)",
-        "patterns": [
-            {
-                "symbol": "*",
-                "gabc": "(i) (ir ir ir) (h) (i) (jr1) (ir) (i.) (:)"
-            },
-            {
-                "symbol": "+",
-                "gabc": "(i) (ir ir ir) (ir1) (hr) (h.) (;)"
-            },
-            {
-                "symbol": "\n",
-                "gabc": "(i) (ir ir ir) (h) (i) (j) (hr1) (ir) (i.) (::)"
-            }
-        ],
-        "find": [],
-        "replace": []
-    },
-    {
-        "name": "5",
-        "type": "salmo",
-        "tom": "5",
+        "tom": "5a",
         "optional_end": "",
         "optional_start": "(d) (f)", 
         "start": "(c3) ",
@@ -840,34 +815,34 @@
         "replace": []
     },
     {
-        "name": "6",
+        "name": "5a2",
         "type": "salmo",
-        "tom": "6",
+        "tom": "5a2",
         "optional_end": "",
-        "optional_start": "(f) (gh)", 
-        "start": "(c4) ",
-        "default": "(h) (hr hr hr) (f) (gh) (gr1) (fr) (f.) (::)",
+        "optional_start": "(d) (f)", 
+        "start": "(c3) ",
+        "default": "(h) (hr hr hr) (ir1) (gxgr) (g) (hr1) (fr) (f.) (::)",
         "patterns": [
             {
                 "symbol": "*",
-                "gabc": "(h) (hr hr hr) (ixir1) (hr) (h) (gr1) (hr) (h.) (:)"
+                "gabc": "(h) (hr hr hr) (ir1) (hr) (h.) (:)"
             },
             {
                 "symbol": "+",
-                "gabc": "(h) (hr hr hr) (hr1) (gr) (g.) (;)"
+                "gabc": "(h) (hr hr hr) (hr1) (fr) (f.) (;)"
             },
             {
                 "symbol": "\n",
-                "gabc": "(h) (hr hr hr) (f) (gh) (gr1) (fr) (f.) (::)"
+                "gabc": "(h) (hr hr hr) (ir1) (gxgr) (g) (hr1) (fr) (f.) (::)"
             }   
         ],
         "find": [],
         "replace": []
     },
     {
-        "name": "6alt",
+        "name": "6",
         "type": "salmo",
-        "tom": "6alt",
+        "tom": "6",
         "optional_end": "",
         "optional_start": "(f) (gh)", 
         "start": "(c4) ",
@@ -896,7 +871,7 @@
         "optional_end": "",
         "optional_start": "(hg) (hi)", 
         "start": "(c3) ",
-        "default": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (g.f.) (::)",
+        "default": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (gf..) (::)",
         "patterns": [
             {
                 "symbol": "*",
@@ -904,36 +879,11 @@
             },
             {
                 "symbol": "+",
-                "gabc": "(i) (ir ir ir) (ir1) (hr) (h) (;)"
+                "gabc": "(i) (ir ir ir) (ir1) (hr) (h.) (;)"
             },
             {
                 "symbol": "\n",
-                "gabc": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (g.f.) (::)"
-            }   
-        ],
-        "find": [],
-        "replace": []
-    },
-    {
-        "name": "7b",
-        "type": "salmo",
-        "tom": "7b",
-        "optional_end": "",
-        "optional_start": "(hg) (hi)", 
-        "start": "(c3) ",
-        "default": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (g.) (::)",
-        "patterns": [
-            {
-                "symbol": "*",
-                "gabc": "(i) (ir ir ir) (kr1) (jr) (j) (ir1) (jr) (j.) (:)"
-            },
-            {
-                "symbol": "+",
-                "gabc": "(i) (ir ir ir) (ir1) (hr) (h) (;)"
-            },
-            {
-                "symbol": "\n",
-                "gabc": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (g.) (::)"
+                "gabc": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (gf..) (::)"
             }   
         ],
         "find": [],
@@ -946,7 +896,7 @@
         "optional_end": "",
         "optional_start": "(hg) (hi)", 
         "start": "(c3) ",
-        "default": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (g.h.) (::)",
+        "default": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (gh..) (::)",
         "patterns": [
             {
                 "symbol": "*",
@@ -954,11 +904,11 @@
             },
             {
                 "symbol": "+",
-                "gabc": "(i) (ir ir ir) (ir1) (hr) (h) (;)"
+                "gabc": "(i) (ir ir ir) (ir1) (hr) (h.) (;)"
             },
             {
                 "symbol": "\n",
-                "gabc": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (g.h.) (::)"
+                "gabc": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (gh..) (::)"
             }   
         ],
         "find": [],
@@ -971,7 +921,7 @@
         "optional_end": "",
         "optional_start": "(hg) (hi)", 
         "start": "(c3) ",
-        "default": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (i.h.) (::)",
+        "default": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (ih..) (::)",
         "patterns": [
             {
                 "symbol": "*",
@@ -979,11 +929,11 @@
             },
             {
                 "symbol": "+",
-                "gabc": "(i) (ir ir ir) (ir1) (hr) (h) (;)"
+                "gabc": "(i) (ir ir ir) (ir1) (hr) (h.) (;)"
             },
             {
                 "symbol": "\n",
-                "gabc": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (i.h.) (::)"
+                "gabc": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (ih..) (::)"
             }   
         ],
         "find": [],
@@ -996,7 +946,7 @@
         "optional_end": "",
         "optional_start": "(hg) (hi)", 
         "start": "(c3) ",
-        "default": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (g.i.) (::)",
+        "default": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (goi..) (::)",
         "patterns": [
             {
                 "symbol": "*",
@@ -1004,20 +954,20 @@
             },
             {
                 "symbol": "+",
-                "gabc": "(i) (ir ir ir) (ir1) (hr) (h) (;)"
+                "gabc": "(i) (ir ir ir) (ir1) (hr) (h.) (;)"
             },
             {
                 "symbol": "\n",
-                "gabc": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (g.i.) (::)"
+                "gabc": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (goi..) (::)"
             }   
         ],
         "find": [],
         "replace": []
     },
     {
-        "name": "8G",
+        "name": "8g",
         "type": "salmo",
-        "tom": "8G",
+        "tom": "8g",
         "optional_end": "",
         "optional_start": "(g) (h)",
         "start": "(c4) ",
@@ -1040,13 +990,13 @@
         "replace": []
     },
     {
-        "name": "8G*",
+        "name": "8g2",
         "type": "salmo",
-        "tom": "8G*",
+        "tom": "8g2",
         "optional_end": "",
         "optional_start": "(g) (h)",
         "start": "(c4) ",
-        "default": "(j) (jr jr jr) (i) (j) (hr1) (gr) (g.h.) (::)",
+        "default": "(j) (jr jr jr) (i) (j) (hr1) (gr) (ghg.) (::)",
         "patterns": [
             {
                 "symbol": "*",
@@ -1058,7 +1008,7 @@
             },
             {
                 "symbol": "\n",
-                "gabc": "(j) (jr jr jr) (i) (j) (hr1) (gr) (g.h.) (::)"
+                "gabc": "(j) (jr jr jr) (i) (j) (hr1) (gr) (ghg.) (::)"
             }
         ],
         "find": [],
@@ -1104,11 +1054,186 @@
             },
             {
                 "symbol": "+",
-                "gabc": "(h) (hr hr hr) (hr1) (fr) (f) (;)"
+                "gabc": "(h) (hr hr hr) (hr1) (fr) (f.) (;)"
             },
             {
                 "symbol": "\n",
                 "gabc": "(h) (hr hr hr) (e) (f) (gr1) (fr) (f.) (::)"
+            }
+        ],
+        "find": [],
+        "replace": []
+    },
+    {
+        "name": "Tonus Cc",
+        "type": "salmo",
+        "tom": "t.cc",
+        "optional_end": "",
+        "optional_start": "(h) (h)",
+        "start": "(c3)",
+        "default": "(h) (hr hr hr) (h) (h.) (::)",
+        "patterns": [
+            {
+                "symbol": "*",
+                "gabc": "(h) (hr hr hr) (g) (f) (hr1) (h) (h.) (:)"
+            },
+            {
+                "symbol": "+",
+                "gabc": "(h) (hr hr hr) (hr1) (fr) (f.) (;)"
+            },
+            {
+                "symbol": "\n",
+                "gabc": "(h) (hr hr hr) (h) (h.) (::)"
+            }
+        ],
+        "find": [],
+        "replace": []
+    },
+    {
+        "name": "Tonus Cc2",
+        "type": "salmo",
+        "tom": "t.cc2",
+        "optional_end": "",
+        "optional_start": "(h) (h)",
+        "start": "(c3)",
+        "default": "(h) (hr hr hr) (f) (h) (ir1) (hr) (h.) (::)",
+        "patterns": [
+            {
+                "symbol": "*",
+                "gabc": "(h) (hr hr hr) (g) (f) (hr1) (hr) (h.) (:)"
+            },
+            {
+                "symbol": "+",
+                "gabc": "(h) (hr hr hr) (hr1) (fr) (f.) (;)"
+            },
+            {
+                "symbol": "\n",
+                "gabc": "(h) (hr hr hr) (f) (h) (ir1) (hr) (h.) (::)"
+            }
+        ],
+        "find": [],
+        "replace": []
+    },
+    {
+        "name": "Tonus Dd",
+        "type": "salmo",
+        "tom": "t.dd",
+        "optional_end": "",
+        "optional_start": "(g) (fg)",
+        "start": "(c2)",
+        "default": "(g) (gr gr gr) (f) (g) (h) (fr1) (gr) (g.) (::)",
+        "patterns": [
+            {
+                "symbol": "*",
+                "gabc": "(g) (gr gr gr) (f) (g) (hr1) (gr) (g.) (:)"
+            },
+            {
+                "symbol": "+",
+                "gabc": "(g) (gr gr gr) (gr1) (fr) (f.) (;)"
+            },
+            {
+                "symbol": "\n",
+                "gabc": "(g) (gr gr gr) (f) (g) (h) (fr1) (gr) (g.) (::)"
+            }
+        ],
+        "find": [],
+        "replace": []
+    },
+    {
+        "name": "Tonus Dc",
+        "type": "salmo",
+        "tom": "t.Dc",
+        "optional_end": "",
+        "optional_start": "(g) (fg)",
+        "start": "(c2)",
+        "default": "(g) (gr gr gr) (gr1) (fr) (f.) (::)",
+        "patterns": [
+            {
+                "symbol": "*",
+                "gabc": "(g) (gr gr gr) (f) (g) (hr1) (gr) (g.) (:)"
+            },
+            {
+                "symbol": "+",
+                "gabc": "(g) (gr gr gr) (gr1) (fr) (f.) (;)"
+            },
+            {
+                "symbol": "\n",
+                "gabc": "(g) (gr gr gr) (gr1) (fr) (f.) (::)"
+            }
+        ],
+        "find": [],
+        "replace": []
+    },
+    {
+        "name": "Tonus Da",
+        "type": "salmo",
+        "tom": "t.Da",
+        "optional_end": "",
+        "optional_start": "(g) (fg)",
+        "start": "(c2)",
+        "default": "(g) (gr gr gr) (f) (g) (h) (fr1) (dr) (d.) (::)",
+        "patterns": [
+            {
+                "symbol": "*",
+                "gabc": "(g) (gr gr gr) (f) (g) (hr1) (gr) (g.) (:)"
+            },
+            {
+                "symbol": "+",
+                "gabc": "(g) (gr gr gr) (gr1) (fr) (f.) (;)"
+            },
+            {
+                "symbol": "\n",
+                "gabc": "(g) (gr gr gr) (f) (g) (h) (fr1) (dr) (d.) (::)"
+            }
+        ],
+        "find": [],
+        "replace": []
+    },
+    {
+        "name": "Tonus E",
+        "type": "salmo",
+        "tom": "t.e",
+        "optional_end": "",
+        "optional_start": "(h) (h)",
+        "start": "(c4)",
+        "default": "(h) (hr hr hr) (ixir1) (gr) (g.) (ixir1) (ir) (h.) (::)",
+        "patterns": [
+            {
+                "symbol": "*",
+                "gabc": "(h) (hr hr hr) (gr1) (fr) (f.) (:)"
+            },
+            {
+                "symbol": "+",
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g.) (;)"
+            },
+            {
+                "symbol": "\n",
+                "gabc": "(h) (hr hr hr) (ixir1) (gr) (g.) (ixir1) (ir) (h.) (::)"
+            }
+        ],
+        "find": [],
+        "replace": []
+    },
+    {
+        "name": "Tonus Peregrinus",
+        "type": "salmo",
+        "tom": "t.pr.",
+        "optional_end": "",
+        "optional_start": "(ixhi) (h)",
+        "start": "(c4)",
+        "default": "(g) (gr gr gr) (d) (fr1) (fr) (ed..) (::)",
+        "patterns": [
+            {
+                "symbol": "*",
+                "gabc": "(h) (hr hr hr) (g) (ixi) (h) (gr1) (fr) (f.) (:)"
+            },
+            {
+                "symbol": "+",
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g.) (;)"
+            },
+            {
+                "symbol": "\n",
+                "gabc": "(g) (gr gr gr) (d) (fr1) (fr) (ed..) (::)"
             }
         ],
         "find": [],
