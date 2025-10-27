@@ -236,6 +236,8 @@ export interface Model {
 }
 
 export interface Parameters {
+    repeatIntonation?: boolean;
+    separateStanzas?: boolean;
     addOptionalStart?: boolean;
     addOptionalEnd?: boolean;
     removeNumbers?: boolean;
@@ -311,10 +313,12 @@ export default function generateGabc(input: string, modelObject: Model, paramete
             gabcLines.push(applyModel(chunk.trim() + (parametersObject.removeSeparator === false ? parametersObject.separator : ''), model.default, psalm));
         }
     }
-    if (psalm && parametersObject.addOptionalStart) {
+    if (psalm) {
         const intonnationNotes = model.optional_start.trim().split(" ").filter(n => n);
         let versicles = [];
         let hemistich = [];
+        let stanzaIndex = 1;
+        let versicleIndex = 1;
         for (const chunk of gabcLines) {
             hemistich.push(chunk);
             if (chunk.endsWith("(::)")) {
@@ -322,18 +326,40 @@ export default function generateGabc(input: string, modelObject: Model, paramete
                 hemistich = [];
             }
         }
-        let stanzaIndex = 1;
-        let versicleIndex = 1;
-        for (const versicle of versicles){
-            if (versicleIndex % 2 !== 0) {
-                let count = 0;
-                versicle[0] = versicle[0].replace(/\([a-zA-Z]\)/g, match => count < 2 ? intonnationNotes[count++] : match);
-                if (versicleIndex > 1) versicle[0] = stanzaIndex + ". " + versicle[0];
-                versicleIndex++;
-                stanzaIndex++;
+        if (parametersObject.separateStanzas && parametersObject.repeatIntonation) {
+            for (const versicle of versicles){
+                if (versicleIndex % 2 !== 0) {
+                    let count = 0;
+                    versicle[0] = versicle[0].replace(/\([a-zA-Z]\)/g, match => count < 2 ? intonnationNotes[count++] : match);
+                    if (versicleIndex > 1) versicle[0] = stanzaIndex + ". " + versicle[0];
+                    versicleIndex++;
+                    stanzaIndex++;
+                }else {
+                    versicle[versicle.length - 1] += "(Z)"
+                    versicleIndex++;
+                }
+            }
+        }else { 
+            if (parametersObject.repeatIntonation) {
+                for (const versicle of versicles){
+                        let count = 0;
+                        versicle[0] = versicle[0].replace(/\([a-zA-Z]\)/g, match => count < 2 ? intonnationNotes[count++] : match);
+                }
             }else {
-                versicle[versicle.length - 1] += "(Z)"
-                versicleIndex++;
+                let count = 0;
+                versicles[0][0] = versicles[0][0].replace(/\([a-zA-Z]\)/g, match => count < 2 ? intonnationNotes[count++] : match);
+            }
+            if (parametersObject.separateStanzas) {
+                for (const versicle of versicles){
+                    if (versicleIndex % 2 !== 0) {
+                        if (versicleIndex > 1) versicle[0] = stanzaIndex + ". " + versicle[0];
+                        versicleIndex++;
+                        stanzaIndex++;
+                    }else {
+                        versicle[versicle.length - 1] += "(Z)";
+                        versicleIndex++;
+                    }
+                }
             }
         }
         gabcLines = versicles.flat();

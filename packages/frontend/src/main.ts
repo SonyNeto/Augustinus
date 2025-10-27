@@ -7,6 +7,8 @@ let psalmModels: Model[] = defaultModels.filter((model) => model.type === 'salmo
 
 const modelSelect = document.getElementById('model') as HTMLSelectElement;
 const psalmSelect = document.getElementById('psalm') as HTMLSelectElement;
+const repeatIntonationCheckbox = document.getElementById('repeatIntonation') as HTMLInputElement;
+const separateStanzasCheckbox = document.getElementById('separateStanzas') as HTMLInputElement;
 //const solemn = document.getElementById('solemn') as HTMLInputElement;
 const separatorInput = document.getElementById('separator') as HTMLInputElement;
 const addOptionalStartCheckbox = document.getElementById('addOptionalStart') as HTMLInputElement;
@@ -105,6 +107,8 @@ function generate() {
   }
 
   const parameters: Parameters = {
+    repeatIntonation: repeatIntonationCheckbox.checked,
+    separateStanzas: separateStanzasCheckbox.checked,
     separator: separatorInput.value.replaceAll('\n', '\n'),
     addOptionalStart: addOptionalStartCheckbox.checked,
     addOptionalEnd: addOptionalEndCheckbox.checked,
