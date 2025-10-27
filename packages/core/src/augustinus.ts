@@ -111,7 +111,7 @@ function applyModel(lyrics: string, gabcModel: string, psalm: boolean): string {
         const isNextSyllableElidable = /^\s+(#?[aeiou])/i.test(nextSyllable);
 
         if (isSyllableElidable && isNextSyllableElidable) {
-            gabcOutputArray[i] = currentSyllable.replace(/@/g, "") + "⏝" + nextSyllable;
+            gabcOutputArray[i] = currentSyllable.replace(/@/g, "") + "_" + nextSyllable;
             gabcOutputArray.splice(i + 1, 1);
             i--;
         }
@@ -322,9 +322,19 @@ export default function generateGabc(input: string, modelObject: Model, paramete
                 hemistich = [];
             }
         }
+        let stanzaIndex = 1;
+        let versicleIndex = 1;
         for (const versicle of versicles){
-            let count = 0;
-            versicle[0] = versicle[0].replace(/\([a-zA-Z]\)/g, match => count < 2 ? intonnationNotes[count++] : match);
+            if (versicleIndex % 2 !== 0) {
+                let count = 0;
+                versicle[0] = versicle[0].replace(/\([a-zA-Z]\)/g, match => count < 2 ? intonnationNotes[count++] : match);
+                if (versicleIndex > 1) versicle[0] = stanzaIndex + ". " + versicle[0];
+                versicleIndex++;
+                stanzaIndex++;
+            }else {
+                versicle[versicle.length - 1] += "(Z)"
+                versicleIndex++;
+            }
         }
         gabcLines = versicles.flat();
     }
