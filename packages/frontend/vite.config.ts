@@ -1,7 +1,13 @@
 import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
+import path from 'path';
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@augustinus/core': path.resolve(__dirname, '../core/src'),
+    },
+  },
   optimizeDeps: {
     include: ['separador-silabas'],
   },

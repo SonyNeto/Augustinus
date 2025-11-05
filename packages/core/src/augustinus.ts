@@ -195,7 +195,7 @@ export default function generateGabc(input: string, modelObject: Model, paramete
         const lastChar = chunk.slice(-1);
         const pattern = model.patterns.find(p => p.symbol === lastChar);
         if (pattern) {
-            const text = model.type === 'evangelho' ? chunk.trim() : chunk.slice(0, -1).trim();
+            const text = model.type === 'leitura' ? chunk.trim() : chunk.slice(0, -1).trim();
             gabcLines.push(applyModel(text, pattern.gabc));
         } else {
             gabcLines.push(applyModel(chunk.trim() + (parametersObject.removeSeparator === false ? parametersObject.separator : ''), model.default));
