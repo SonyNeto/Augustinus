@@ -5,13 +5,18 @@
   "description": "Aplicativo CLI para o Augustinus",
   "main": "src/cli.ts",
   "type": "module",
+  "bin": {
+    "augustinus": "./dist/cli.js"
+  },
   "scripts": {
-    "start": "bun run src/cli.ts"
+    "start": "bun run src/cli.ts",
+    "prepublishOnly": "tsc"
   },
   "dependencies": {
     "yargs": "^17.0.0"
   },
   "devDependencies": {
-    "@types/yargs": "^17.0.0"
+    "@types/yargs": "^17.0.0",
+    "@augustinus/core": "workspace:*"
   }
 }
