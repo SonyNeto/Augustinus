@@ -28,7 +28,7 @@ function psalmLogic(input: string[], notes: string[]) { //Função que aplica a 
     const replaceAt = (index: number, value: string) => {input[index] = input[index].replace("@", value)}; // Função menor, parecida com a replaceFromEnd, mas para array
     const isTonic = (index: number): boolean => input[index]?.includes("#") ?? false; // Função que será usada mais tarde
     const tonicIndex = i - input.findLastIndex(syllable => syllable.includes("#")); // Procura pelo índice da primeira sílaba tônica de trás pra frente
-    notes = notes.map(notes => notes/*.replace("r1", "")*/.replace("r", "") || ""); // Limpa as marcações de acento das notas
+    notes = notes.map(notes => notes.replace("r1", "").replace("r", "") || ""); // Limpa as marcações de acento das notas
     if (tonicNote.length > 0) {
         switch (tonicIndex) {
             case 1:
