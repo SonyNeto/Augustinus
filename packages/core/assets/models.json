@@ -106,6 +106,27 @@
             "ERRO"
         ]
     },
+    {
+        "name": "Oração dos fiéis",
+        "type": "leitura",
+        "tom": "A",
+        "optional_end": "",
+        "optional_start": "(c4)",
+        "start": "(c4)",
+        "default": "(h) (hr hr hr) (hr1) (fr) (f) (;)",
+        "patterns": [
+            {
+                "symbol": ",",
+                "gabc": "(h) (hr hr hr) (hr1) (hr) (h) (,)"
+            }
+        ],
+        "find": [
+            "Rezemos ao Senhor."
+        ],
+        "replace": [
+            "Re(h)ze(h)mos(h) ao(h) Se(g)nhor:(ij) (::)  <c><sp>R/</sp>.</c> Ou(hg)vi(fe)-nos,(f) Se(g)nhor.(h) (::Z)"
+        ]
+    },
      {
         "name": "Prefácio tom solene",
         "type": "prefacio",

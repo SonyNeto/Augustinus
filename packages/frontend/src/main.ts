@@ -57,6 +57,8 @@ function handleModelChange() {
 }
 // const chantContainer = document.getElementById('chant-container') as HTMLDivElement;
 function gabcToSvg(gabc: string) {
+  gabc = gabc.replaceAll("{<v>\\itie{a a}</v>}", "{a_a}")
+  gabc = gabc.replaceAll("{<v>\\itie{e e}</v>}", "{e_e}")
   if (renderer === null) {
     renderer = new GregorianChantSVGRenderer(chantContainer);
   }
