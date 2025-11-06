@@ -111,7 +111,10 @@ function applyModel(lyrics: string, gabcModel: string, psalm: boolean): string {
         const isNextSyllableElidable = /^\s+(#?[aeiou])/i.test(nextSyllable);
 
         if (isSyllableElidable && isNextSyllableElidable) {
-            gabcOutputArray[i] = currentSyllable.replace(/@/g, "") + "_" + nextSyllable;
+            //elisão elision
+            const s1 = currentSyllable.replace(/@/g, "");
+            const s2 = nextSyllable;
+            gabcOutputArray[i] = `{<v>\\itie{${s1} ${s2}}</v>}`;
             gabcOutputArray.splice(i + 1, 1);
             i--;
         }
@@ -309,7 +312,7 @@ export default function generateGabc(input: string, modelObject: Model, paramete
         const pattern = model.patterns.find(p => p.symbol === lastChar);
         if (pattern) {
             const text = model.type === 'leitura' ? chunk.trim() : chunk.slice(0, -1).trim();
-            gabcLines.push(applyModel(text, pattern.gabc));
+            gabcLines.push(applyModel(text, pattern.gabc, psalm))
         } else {
             gabcLines.push(applyModel(chunk.trim() + (parametersObject.removeSeparator === false ? parametersObject.separator : ''), model.default, psalm));
         }
