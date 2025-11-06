@@ -28,15 +28,31 @@
 					<div class="options-grid">
 						<div class="option">
 							<label for="model">Modelo:</label>
-							<select id="model"></select>
+							<select id="model">
+								<option value = "">-- Selecione um modelo --</option>
+							</select>
+						</div>
+						<div class="option">
+							<label for="psalm">Salmodia:</label>
+							<select id="psalm">
+								<option value = "">-- Selecione uma salmodia --</option>
+							</select>
 						</div>
 						<div class="option">
 							<label for="separator">Separador:</label>
 							<input type="text" id="separator" value="." />
 						</div>
 						<div class="option">
+							<input type="checkbox" id="repeatIntonation" checked />
+							<label for="repeatIntonation">Repetir entonação (salmo)</label>
+						</div>
+						<div class="option">
 							<input type="checkbox" id="addOptionalStart" checked />
 							<label for="addOptionalStart">Adicionar começo</label>
+						</div>
+						<div class="option">
+							<input type="checkbox" id="separateStanzas" checked />
+							<label for="separateStanzas">Separar estrofes (salmo)</label>
 						</div>
 						<div class="option">
 							<input type="checkbox" id="addOptionalEnd" checked />
