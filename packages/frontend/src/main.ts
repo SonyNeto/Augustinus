@@ -1,15 +1,15 @@
 import { GregorianChantSVGRenderer, GregorioScore, ChantContext } from '@testneumz/nabc-lib';
 import generateGabc, { defaultModels } from '@augustinus/core';
 import type { Model, Parameters } from '@augustinus/core';
-let models: Model[] = defaultModels.filter((model) => model.type !== 'salmo');
+
+const models: Model[] = defaultModels.filter((model) => model.type !== 'salmo');
 let renderer: any | null = null;
-let psalmModels: Model[] = defaultModels.filter((model) => model.type === 'salmo'); 
+const psalmModels: Model[] = defaultModels.filter((model) => model.type === 'salmo');
 
 const modelSelect = document.getElementById('model') as HTMLSelectElement;
 const psalmSelect = document.getElementById('psalm') as HTMLSelectElement;
 const repeatIntonationCheckbox = document.getElementById('repeatIntonation') as HTMLInputElement;
 const separateStanzasCheckbox = document.getElementById('separateStanzas') as HTMLInputElement;
-//const solemn = document.getElementById('solemn') as HTMLInputElement;
 const separatorInput = document.getElementById('separator') as HTMLInputElement;
 const addOptionalStartCheckbox = document.getElementById('addOptionalStart') as HTMLInputElement;
 const addOptionalEndCheckbox = document.getElementById('addOptionalEnd') as HTMLInputElement;
@@ -30,6 +30,9 @@ const customClefSelect = document.getElementById('custom-clef') as HTMLSelectEle
 const customPatternTextArea = document.getElementById('custom-pattern') as HTMLTextAreaElement;
 const customStartInput = document.getElementById('custom-start') as HTMLInputElement;
 
+const modelOption = document.getElementById('model-option') as HTMLDivElement;
+const psalmControl = document.getElementById('psalm-controls') as HTMLDivElement;
+
 function handleModelChange(event: Event) {
   const target = event.target as HTMLSelectElement;
 
@@ -39,6 +42,11 @@ function handleModelChange(event: Event) {
     modelSelect.value = '';
   }
 
+  updateCustomFields();
+  handlePsalmOptions();
+}
+
+function updateCustomFields() {
   let selectedModel: Model | null = null;
 
   if (modelSelect.value) {
@@ -68,16 +76,23 @@ function handleModelChange(event: Event) {
   }
 }
 
-// const chantContainer = document.getElementById('chant-container') as HTMLDivElement;
+function handlePsalmOptions() {
+  const selectedModelName = modelSelect.options[modelSelect.selectedIndex]?.text;
+  const isPsalm = selectedModelName === 'Salmo';
+
+  modelOption.style.display = psalmSelect.value !== '' ? 'none' : 'block';
+  psalmControl.style.display = isPsalm || psalmSelect.value !== '' ? 'block' : 'none';
+}
+
 function gabcToSvg(gabc: string) {
-  gabc = gabc.replaceAll("{<v>\\itie{a a}</v>}", "{a_a}")
-  gabc = gabc.replaceAll("{<v>\\itie{e e}</v>}", "{e_e}")
+  gabc = gabc.replaceAll('{<v>\\itie{a a}</v>}', '{a_a}');
+  gabc = gabc.replaceAll('{<v>\\itie{e e}</v>}', '{e_e}');
   if (renderer === null) {
     renderer = new GregorianChantSVGRenderer(chantContainer);
   }
 
   if (!gabc) {
-    chantContainer.innerHTML = "";
+    chantContainer.innerHTML = '';
     return;
   }
 
@@ -88,7 +103,6 @@ function gabcToSvg(gabc: string) {
     renderer.renderSvg(score);
   } catch (e) {
     console.error(e);
-    // todo: better error handling
   }
 }
 
@@ -152,26 +166,13 @@ psalmModels.forEach((model, index) => {
   option.textContent = model.name;
   psalmSelect.appendChild(option);
 });
-handleModelChange;
+
+handlePsalmOptions();
 
 const exportSvgButton = document.getElementById('export-svg') as HTMLButtonElement;
-const exportPngButton = document.getElementById('export-png') as HTMLButtonElement;
-const exportPdfButton = document.getElementById('export-pdf') as HTMLButtonElement;
 
 exportSvgButton.addEventListener('click', () => {
   if (renderer) {
     renderer.exportSvg('chant.svg');
-  }
-});
-
-exportPngButton.addEventListener('click', () => {
-  if (renderer) {
-    renderer.exportPng('chant.png');
-  }
-});
-
-exportPdfButton.addEventListener('click', () => {
-  if (renderer) {
-    renderer.exportPdf('chant.pdf');
   }
 });

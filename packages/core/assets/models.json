@@ -266,27 +266,14 @@
         ]
     },
     {
-        "name": "VI (teste)",
-        "type": "salmo",
-        "tom": "VI",
+        "name": "Salmo",
+        "type": "",
+        "tom": "",
         "optional_end": "",
-        "optional_start": "(g) (h)",
-        "start": "(c4) ",
-        "default": "(h) (hr hr hr) (f) (gh) (hr1) (gr) (f) (::) ",
-        "patterns": [
-            {
-                "symbol": "*",
-                "gabc": "(h) (hr hr hr) (g) (hr1) (fr) (f) (;) "
-            },
-            {
-                "symbol": "&",
-                "gabc": "(f) (gh) (hr hr hr) (g) (hr1) (fr) (f) (;)"
-            },
-            {
-                "symbol": "+",
-                "gabc": "(h) (hr hr hr) (hr1) (gr) (g)"
-            }
-        ],
+        "optional_start": "",
+        "start": "",
+        "default": "",
+        "patterns": [],
         "find": [],
         "replace": []
     },

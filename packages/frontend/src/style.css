@@ -142,6 +142,35 @@ summary {
   margin-left: 0.5rem;
 }
 
+#psalm-controls {
+  border-top: 1px solid #9B5B4D;
+  padding-top: 1rem;
+  padding-left:1rem;
+  margin-top: 1rem;
+}
+
+#psalm-controls h3 {
+  color: #F5F0E1;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2em;
+}
+
+#psalm-controls .option {
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+#psalm-controls #psalm-option {
+  grid-column: span 2;
+}
+
+
+#psalm-controls > div {
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
 .a4-container {
   background: white;
   width: 210mm;

@@ -26,16 +26,10 @@
 				<details>
 					<summary>Opções</summary>
 					<div class="options-grid">
-						<div class="option">
+						<div id="model-option" class="option">
 							<label for="model">Modelo:</label>
 							<select id="model">
 								<option value = "">-- Selecione um modelo --</option>
-							</select>
-						</div>
-						<div class="option">
-							<label for="psalm">Salmodia:</label>
-							<select id="psalm">
-								<option value = "">-- Selecione uma salmodia --</option>
 							</select>
 						</div>
 						<div class="option">
@@ -43,16 +37,8 @@
 							<input type="text" id="separator" value="." />
 						</div>
 						<div class="option">
-							<input type="checkbox" id="repeatIntonation" checked />
-							<label for="repeatIntonation">Repetir entonação (salmo)</label>
-						</div>
-						<div class="option">
 							<input type="checkbox" id="addOptionalStart" checked />
 							<label for="addOptionalStart">Adicionar começo</label>
-						</div>
-						<div class="option">
-							<input type="checkbox" id="separateStanzas" checked />
-							<label for="separateStanzas">Separar estrofes (salmo)</label>
 						</div>
 						<div class="option">
 							<input type="checkbox" id="addOptionalEnd" checked />
@@ -94,6 +80,23 @@
 							<input type="text" id="custom-start" value="(c3) <sp>V/</sp> " />
 						</div>
 					</div>
+					<div id="psalm-controls" class="psalm-controls">
+						<h3>Opções dos salmos</h3>
+					<div id="psalm-option" class="option">
+							<label for="psalm">Salmodia:</label>
+							<select id="psalm">
+								<option value = "">-- Selecione uma salmodia --</option>
+							</select>
+						</div>
+						<div id="repeat-intonation-option" class="option">
+							<input type="checkbox" id="repeatIntonation" checked />
+							<label for="repeatIntonation">Repetir entonação (salmo)</label>
+						</div>
+						<div id="separate-stanzas-option" class="option">
+							<input type="checkbox" id="separateStanzas" checked />
+							<label for="separateStanzas">Separar estrofes (salmo)</label>
+						</div>
+						</div>
 				</details>
 				<label for="metadata">Metadados</label>
 				<textarea id="metadata" rows="5" spellcheck="false"></textarea>
