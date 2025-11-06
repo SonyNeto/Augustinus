@@ -106,6 +106,27 @@
             "ERRO"
         ]
     },
+    {
+        "name": "Oração dos fiéis",
+        "type": "leitura",
+        "tom": "A",
+        "optional_end": "",
+        "optional_start": "(c4)",
+        "start": "(c4)",
+        "default": "(h) (hr hr hr) (hr1) (fr) (f) (;)",
+        "patterns": [
+            {
+                "symbol": ",",
+                "gabc": "(h) (hr hr hr) (hr1) (hr) (h) (,)"
+            }
+        ],
+        "find": [
+            "Rezemos ao Senhor."
+        ],
+        "replace": [
+            "Re(h)ze(h)mos(h) ao(h) Se(g)nhor:(ij) (::)  <c><sp>R/</sp>.</c> Ou(hg)vi(fe)-nos,(f) Se(g)nhor.(h) (::Z)"
+        ]
+    },
      {
         "name": "Prefácio tom solene",
         "type": "prefacio",
@@ -176,8 +197,37 @@
         ]
     },
     {
+        "name": "Primeira Leitura",
+        "type": "leitura",
+        "tom": "simples",
+        "optional_end": "",
+        "optional_start": "(c3) ",
+        "start": "(c3) ",
+        "default": "(h) (hr hr hr) (hr1) (dr) (d) (:)",
+        "patterns": [
+            {
+                "symbol": "+",
+                "gabc": "(h) (hr hr hr) (hr1) (fr) (f) (,)"
+            },
+            {
+                "symbol": "?",
+                "gabc": "(g) (gr gr gr) (f) (g) (gh) (:)"
+            },
+            {
+                "symbol": ":",
+                "gabc": "(h) (hr hr hr) (h) (;)"
+            },
+            {
+                "symbol": ",",
+                "gabc": "(h) (hr hr hr) (hr1) (hr) (h) (,)"
+            }
+        ],
+        "find": [],
+        "replace": []
+    },
+    {
         "name": "Evangelho tom A",
-        "type": "evangelho",
+        "type": "leitura",
         "tom": "",
         "optional_end": "<c><sp>V/</sp>.</c>Pa(h)la(h)vra(h) da(h) Sal(f)va(h)ção.(h) (::) <c><sp>R/</sp>.</c> Gló(h)ri(h){<v>\\itie{a a}</v>}(h) vós,(f) Se(h)nhor.(h) (::Z)",
         "optional_start": "<c><sp>V/</sp>.</c> O(h) Se(h)nhor(h) es(h)te(h)ja(h) con(h)vos(h)co.(h) (::) <c><sp>R/</sp>.</c> E(h)le(h) es(h)tá(h) no(h) meio(h) de(h) nós.(h) (::Z)",

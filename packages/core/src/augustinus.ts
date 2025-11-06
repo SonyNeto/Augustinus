@@ -1,6 +1,6 @@
 import {syllable, tonic} from "separador-silabas";
-import defaultModels from '../assets/models.json' assert {type: "json"};
 //import defaultModels from '../assets/psalm_models.json' assert {type: "json"};
+import defaultModels from '../assets/models.json' with { type: 'json' };
 
 function replaceFromEnd(input: string, find: string, replaceWith: string, limit?: number): string {
     let result: string = input;
@@ -248,6 +248,7 @@ export interface Parameters {
     customClef?: string;
     customPattern?: string;
     customStart?: string;
+    header?: string;
 }
 
 export default function generateGabc(input: string, modelObject: Model, parametersObject: Parameters): string {
@@ -307,8 +308,8 @@ export default function generateGabc(input: string, modelObject: Model, paramete
         const lastChar = chunk.slice(-1);
         const pattern = model.patterns.find(p => p.symbol === lastChar);
         if (pattern) {
-            const text = model.type === 'evangelho' ? chunk.trim() : chunk.slice(0, -1).trim();
-            gabcLines.push(applyModel(text, pattern.gabc, psalm));
+            const text = model.type === 'leitura' ? chunk.trim() : chunk.slice(0, -1).trim();
+            gabcLines.push(applyModel(text, pattern.gabc));
         } else {
             gabcLines.push(applyModel(chunk.trim() + (parametersObject.removeSeparator === false ? parametersObject.separator : ''), model.default, psalm));
         }
@@ -377,6 +378,9 @@ export default function generateGabc(input: string, modelObject: Model, paramete
         resultGabc = gabcLines.join("\n");
     }
     resultGabc = resultGabc.replaceAll(/'\(.\)/gm, "(,)");
+    if (parametersObject.header) {
+        resultGabc = parametersObject.header + "\n%%\n" + resultGabc;
+    }
     return resultGabc;
 }
 

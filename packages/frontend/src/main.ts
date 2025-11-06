@@ -17,6 +17,7 @@ const removeNumbersCheckbox = document.getElementById('removeNumbers') as HTMLIn
 const removeParenthesisCheckbox = document.getElementById('removeParenthesis') as HTMLInputElement;
 const removeSeparatorCheckbox = document.getElementById('removeSeparator') as HTMLInputElement;
 const inputTextArea = document.getElementById('input') as HTMLTextAreaElement;
+const metadataTextArea = document.getElementById('metadata') as HTMLTextAreaElement;
 const gabcTextArea = document.getElementById('gabc') as HTMLTextAreaElement;
 const generateButton = document.getElementById('generate') as HTMLButtonElement;
 const chantContainer = document.getElementById('chant-container') as HTMLDivElement;
@@ -69,6 +70,8 @@ function handleModelChange(event: Event) {
 
 // const chantContainer = document.getElementById('chant-container') as HTMLDivElement;
 function gabcToSvg(gabc: string) {
+  gabc = gabc.replaceAll("{<v>\\itie{a a}</v>}", "{a_a}")
+  gabc = gabc.replaceAll("{<v>\\itie{e e}</v>}", "{e_e}")
   if (renderer === null) {
     renderer = new GregorianChantSVGRenderer(chantContainer);
   }
@@ -119,6 +122,7 @@ function generate() {
     customClef: customClefSelect.value,
     customPattern: customPatternTextArea.value,
     customStart: customStartInput.value,
+    header: metadataTextArea.value,
   };
 
   const gabc = generateGabc(inputText, selectedModel, parameters);
