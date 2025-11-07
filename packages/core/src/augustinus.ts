@@ -99,7 +99,7 @@ function applyModel(lyrics: string, gabcModel: string, psalm: boolean, doElision
     }
     
     let notes: string[] = suffixString.split(" ") || [];
-    let pause: string = notes.pop() || "";
+    
     gabcOutput += wordsWithNotePlaceholders.join(" ");
     let gabcOutputArray: string[] = gabcOutput.split(/(?<=@)/);
 
@@ -122,6 +122,7 @@ function applyModel(lyrics: string, gabcModel: string, psalm: boolean, doElision
 
     if (isDynamic && lastWordForTonic) {
         if (psalm) {
+            let pause: string = notes.pop() || "";
             // Separa as notas do sufixo em dois grupos de acentos
             let firstAccentIndex = notes.findIndex(note => note.includes("r1"));
             let secondAccentIndex = notes.findIndex((note, i) => i > firstAccentIndex + 1 && note.includes("r1"));
@@ -340,7 +341,7 @@ export default function generateGabc(input: string, modelObject: Model, paramete
                     versicleIndex++;
                     stanzaIndex++;
                 }else {
-                    versicle[versicle.length - 1] += "(Z)"
+                    versicle[versicle.length - 1] += " (Z)"
                     versicleIndex++;
                 }
             }
@@ -357,11 +358,11 @@ export default function generateGabc(input: string, modelObject: Model, paramete
             if (parametersObject.separateStanzas) {
                 for (const versicle of versicles){
                     if (versicleIndex % 2 !== 0) {
-                        if (versicleIndex > 1) versicle[0] = stanzaIndex + ". " + versicle[0];
+                        if (versicleIndex > 1) versicle[0] = "<c>" + stanzaIndex + ".</c> " + versicle[0];
                         versicleIndex++;
                         stanzaIndex++;
                     }else {
-                        versicle[versicle.length - 1] += "(Z)";
+                        versicle[versicle.length - 1] += " (Z)";
                         versicleIndex++;
                     }
                 }
