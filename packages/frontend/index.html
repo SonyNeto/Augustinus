@@ -90,11 +90,15 @@
 						</div>
 						<div id="repeat-intonation-option" class="option">
 							<input type="checkbox" id="repeatIntonation" checked />
-							<label for="repeatIntonation">Repetir entonação (salmo)</label>
+							<label for="repeatIntonation">Repetir entonação</label>
 						</div>
 						<div id="separate-stanzas-option" class="option">
 							<input type="checkbox" id="separateStanzas" checked />
-							<label for="separateStanzas">Separar estrofes (salmo)</label>
+							<label for="separateStanzas">Separar estrofes</label>
+						</div>
+						<div id="elision-option" class="option">
+							<input type="checkbox" id="doElision" />
+							<label for="doElision">Fazer elisão (experimental)</label>
 						</div>
 						</div>
 				</details>
@@ -105,8 +109,8 @@
 				<button id="generate">Gerar</button>
 				<div class="export-buttons">
 					<button id="export-svg">Exportar SVG</button>
-					<!-- <button id="export-png">Exportar PNG</button>
-            <button id="export-pdf">Exportar PDF</button> -->
+					<button id="export-png">Exportar PNG</button>
+					<button id="export-pdf">Exportar PDF</button>
 				</div>
 				<label for="gabc">GABC</label>
 				<textarea id="gabc" rows="10" spellcheck="false"></textarea>

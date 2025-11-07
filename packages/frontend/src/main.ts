@@ -10,6 +10,7 @@ const modelSelect = document.getElementById('model') as HTMLSelectElement;
 const psalmSelect = document.getElementById('psalm') as HTMLSelectElement;
 const repeatIntonationCheckbox = document.getElementById('repeatIntonation') as HTMLInputElement;
 const separateStanzasCheckbox = document.getElementById('separateStanzas') as HTMLInputElement;
+const doElisionCheckbox = document.getElementById('doElision') as HTMLInputElement;
 const separatorInput = document.getElementById('separator') as HTMLInputElement;
 const addOptionalStartCheckbox = document.getElementById('addOptionalStart') as HTMLInputElement;
 const addOptionalEndCheckbox = document.getElementById('addOptionalEnd') as HTMLInputElement;
@@ -127,6 +128,7 @@ function generate() {
   const parameters: Parameters = {
     repeatIntonation: repeatIntonationCheckbox.checked,
     separateStanzas: separateStanzasCheckbox.checked,
+    doElision: doElisionCheckbox.checked,
     separator: separatorInput.value.replaceAll('\n', '\n'),
     addOptionalStart: addOptionalStartCheckbox.checked,
     addOptionalEnd: addOptionalEndCheckbox.checked,
@@ -171,9 +173,23 @@ psalmModels.forEach((model, index) => {
 handlePsalmOptions();
 
 const exportSvgButton = document.getElementById('export-svg') as HTMLButtonElement;
+const exportPngButton = document.getElementById('export-png') as HTMLButtonElement;
+const exportPdfButton = document.getElementById('export-pdf') as HTMLButtonElement;
+
 
 exportSvgButton.addEventListener('click', () => {
   if (renderer) {
     renderer.exportSvg('chant.svg');
+  }
+});
+exportPngButton.addEventListener('click', () => {
+  if (renderer) {
+    renderer.exportPng('chant.png');
+  }
+});
+
+exportPdfButton.addEventListener('click', () => {
+  if (renderer) {
+    renderer.exportPdf('chant.pdf');
   }
 });

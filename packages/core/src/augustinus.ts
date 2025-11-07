@@ -57,7 +57,7 @@ function psalmLogic(input: string[], notes: string[]) { //Função que aplica a 
     }
 };
 
-function applyModel(lyrics: string, gabcModel: string, psalm: boolean): string {
+function applyModel(lyrics: string, gabcModel: string, psalm: boolean, doElision?: boolean): string {
     const unstressedMonosyllables: string[] = ["a", "e", "o", "as", "os", "um", "uns", "de", "do", "da", "dos", "das", "em", "no", "na", "nos", "nas", "que", "me", "te", "se", "lhe", "lhes", "com", "por", "sem", "seu", "seus", "meu", "meus", "teu", "teus", "eu", "tu", "mas", "ou", "sou", "foi", "ao", "aos", "pois", "diz"];
     const taggedParts: string[] = [];
     const placeholder = "||TAGGED_PART||";
@@ -103,20 +103,20 @@ function applyModel(lyrics: string, gabcModel: string, psalm: boolean): string {
     gabcOutput += wordsWithNotePlaceholders.join(" ");
     let gabcOutputArray: string[] = gabcOutput.split(/(?<=@)/);
 
-    for (let i = 0; i < gabcOutputArray.length; i++) {
-        const currentSyllable = gabcOutputArray[i] || "";
-        const nextSyllable = gabcOutputArray[i + 1] || "";
+    if (doElision) {
+        for (let i = 0; i < gabcOutputArray.length; i++) {
+            const currentSyllable = gabcOutputArray[i] || "";
+            const nextSyllable = gabcOutputArray[i + 1] || "";
 
-        const isSyllableElidable = /^(?!\s*#).*?[aeio]@?$/i.test(currentSyllable);
-        const isNextSyllableElidable = /^\s+(#?[aeiou])/i.test(nextSyllable);
+            const isSyllableElidable = /^(?!\s*#).*?[aeio]@?$/i.test(currentSyllable);
+            const isNextSyllableElidable = /^\s+(#?[aeiou])/i.test(nextSyllable);
 
-        if (isSyllableElidable && isNextSyllableElidable) {
-            //elisão elision
-            const s1 = currentSyllable.replace(/@/g, "");
-            const s2 = nextSyllable;
-            gabcOutputArray[i] = `{<v>\\itie{${s1} ${s2}}</v>}`;
-            gabcOutputArray.splice(i + 1, 1);
-            i--;
+            if (isSyllableElidable && isNextSyllableElidable) {
+                //elisão elision
+                gabcOutputArray[i] = currentSyllable.replace(/@/g, "") + "_" + nextSyllable;
+                gabcOutputArray.splice(i + 1, 1);
+                i--;
+            }
         }
     }
 
@@ -241,6 +241,7 @@ export interface Model {
 export interface Parameters {
     repeatIntonation?: boolean;
     separateStanzas?: boolean;
+    doElision?: boolean;
     addOptionalStart?: boolean;
     addOptionalEnd?: boolean;
     removeNumbers?: boolean;
@@ -303,7 +304,7 @@ export default function generateGabc(input: string, modelObject: Model, paramete
             if (replacement !== undefined) {
                 gabcLines.push(replacement);
             } else {
-                gabcLines.push(applyModel(chunk, model.default, psalm));
+                gabcLines.push(applyModel(chunk, model.default, psalm, parametersObject.doElision));
             }
             continue;
         }
@@ -312,9 +313,9 @@ export default function generateGabc(input: string, modelObject: Model, paramete
         const pattern = model.patterns.find(p => p.symbol === lastChar);
         if (pattern) {
             const text = model.type === 'leitura' ? chunk.trim() : chunk.slice(0, -1).trim();
-            gabcLines.push(applyModel(text, pattern.gabc, psalm))
+            gabcLines.push(applyModel(text, pattern.gabc, psalm, parametersObject.doElision))
         } else {
-            gabcLines.push(applyModel(chunk.trim() + (parametersObject.removeSeparator === false ? parametersObject.separator : ''), model.default, psalm));
+            gabcLines.push(applyModel(chunk.trim() + (parametersObject.removeSeparator === false ? parametersObject.separator : ''), model.default, psalm, parametersObject.doElision));
         }
     }
     if (psalm) {
@@ -335,7 +336,7 @@ export default function generateGabc(input: string, modelObject: Model, paramete
                 if (versicleIndex % 2 !== 0) {
                     let count = 0;
                     versicle[0] = versicle[0].replace(/\([a-zA-Z]\)/g, match => count < 2 ? intonnationNotes[count++] : match);
-                    if (versicleIndex > 1) versicle[0] = stanzaIndex + ". " + versicle[0];
+                    if (versicleIndex > 1) versicle[0] = "<c>" + stanzaIndex + ".</c> " + versicle[0]; // numero versiculos
                     versicleIndex++;
                     stanzaIndex++;
                 }else {
