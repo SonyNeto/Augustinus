@@ -52,12 +52,13 @@ function psalmLogic(input: string[], notes: string[]) { //Função que aplica a 
                 replaceAt(i - 1, notes[notes.length - 1]);
                 break;
             }  
-    }else { // Para o caso de não ter tônica melódica (tom Cc)
+    }else { // Para o caso de não ter tônica melódica
         replaceAt(i - 1, notes[notes.length - 1]);
     }
 };
 
 function applyModel(lyrics: string, gabcModel: string, psalm: boolean, doElision?: boolean): string {
+    lyrics = lyrics.normalize("NFC");
     const unstressedMonosyllables: string[] = ["a", "e", "o", "as", "os", "um", "uns", "de", "do", "da", "dos", "das", "em", "no", "na", "nos", "nas", "que", "me", "te", "se", "lhe", "lhes", "com", "por", "sem", "seu", "seus", "meu", "meus", "teu", "teus", "eu", "tu", "mas", "ou", "sou", "foi", "ao", "aos", "pois", "diz"];
     const taggedParts: string[] = [];
     const placeholder = "||TAGGED_PART||";
@@ -126,12 +127,12 @@ function applyModel(lyrics: string, gabcModel: string, psalm: boolean, doElision
             // Separa as notas do sufixo em dois grupos de acentos
             let firstAccentIndex = notes.findIndex(note => note.includes("r1"));
             let secondAccentIndex = notes.findIndex((note, i) => i > firstAccentIndex + 1 && note.includes("r1"));
-            let preNotesIndex = (firstAccentIndex - 1) >= 0 ? (firstAccentIndex - 1) : false;
+            let preNotesIndex = (firstAccentIndex - 1);
 
             // Se só tiver um acento, mantém um único grupo
             let firstAccentNotes = secondAccentIndex === -1 ? notes.slice(firstAccentIndex) : notes.slice(firstAccentIndex, secondAccentIndex);
             let secondAccentNotes = secondAccentIndex === -1 ? [] : notes.slice(secondAccentIndex);
-            let preNotes = preNotesIndex !== false ? notes.slice(0, preNotesIndex + 1) : false;
+            let preNotes = notes.slice(0, preNotesIndex + 1);
 
             // Se tiver dois grupos, o secondAccentNotes é aplicado primeiro, depois cortado do array, o firstAccentNotes é aplicado ao que sobrou e os dois arrays são concatenados
             if (secondAccentIndex !== -1) {
@@ -150,7 +151,7 @@ function applyModel(lyrics: string, gabcModel: string, psalm: boolean, doElision
                 psalmLogic(gabcOutputArray, firstAccentNotes);
             }
             // Se tiver um grupo de notas prévias, aplica às sílabas restantes
-            if (preNotes){
+            if (preNotes.length){
                 for (let i = preNotes.length - 1, j = gabcOutputArray.length - 1; i >= 0 && j >= 0; j--) {
                     if (!gabcOutputArray[j].includes("(")) {
                         gabcOutputArray[j] = gabcOutputArray[j].replace("@", preNotes[i]);
@@ -162,7 +163,7 @@ function applyModel(lyrics: string, gabcModel: string, psalm: boolean, doElision
         gabcOutputArray = gabcOutputArray.map(syllable => syllable.replace(/#|(?<=\()'/g, ""));
 
         // Junta o array com o GABC numa string e adiciona a pausa no final
-        gabcOutputArray.push(pause);
+        gabcOutputArray.push(" " + pause);
         gabcOutput = gabcOutputArray.join("");
         }
         gabcOutput = gabcOutput.replaceAll("#", "");
@@ -292,15 +293,20 @@ export default function generateGabc(input: string, modelObject: Model, paramete
     }
     const chunks: string[] = input.split(parametersObject.separator).map(s => s.trim()).filter(chunk => chunk && chunk !== parametersObject.separator);
     let gabcLines: string[] = [];
-
     for (const chunk of chunks) {
+        console.log("Processing chunk:", chunk);
+        const lectureTracker : number = chunks.indexOf(chunk);
+        const lectureStartFlag : boolean = lectureTracker === 0 && model.type === 'leitura'
+        const lectureConclusionFlag : boolean = lectureTracker === chunks.length - 1 && model.type === 'leitura'
+        const lastChar = lectureConclusionFlag? "*" : lectureStartFlag? "." : chunk.slice(-1);
+        const pattern = model.patterns.find(p => p.symbol === lastChar);
         if(modelObject.type === "prefacio" && modelObject.tom === "solene" && chunk == "Por isso,")
         {
             gabcLines.push("Por(f) is(ef)so,(f) (,) ");
             continue
         }
-        let findIndex = model.find.indexOf(chunk + parametersObject.separator)
-        if (findIndex !== -1) {
+        let findIndex = model.find.indexOf(chunk + parametersObject.separator);
+        if (findIndex !== -1 && !lectureConclusionFlag && !lectureStartFlag) {
             const replacement = model.replace[findIndex];
             if (replacement !== undefined) {
                 gabcLines.push(replacement);
@@ -310,9 +316,9 @@ export default function generateGabc(input: string, modelObject: Model, paramete
             continue;
         }
         
-        const lastChar = chunk.slice(-1);
-        const pattern = model.patterns.find(p => p.symbol === lastChar);
-        if (pattern) {
+        if (model.type === 'leitura' && pattern) {
+            gabcLines.push(applyModel((chunk.trim()), pattern.gabc, true, parametersObject.doElision));
+        } else if (pattern) {
             const text = model.type === 'leitura' ? chunk.trim() : chunk.slice(0, -1).trim();
             gabcLines.push(applyModel(text, pattern.gabc, psalm, parametersObject.doElision))
         } else {
