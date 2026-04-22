@@ -690,7 +690,7 @@
     "optionalEnd": "",
     "optionalStart": "(i) (hi)",
     "start": "(f3)",
-    "default": "(i) (ir ir ir) (ir1) (hr) (h.) (;)",
+    "default": "(i) (ir ir ir) (ir1) (hr) (h.) (::)",
     "patterns": [
       {
         "symbol": "*",
@@ -702,7 +702,7 @@
       },
       {
         "symbol": "\n",
-        "gabc": "(i) (ir ir ir) (ir1) (hr) (h.) (;)"
+        "gabc": "(i) (ir ir ir) (ir1) (hr) (h.) (::)"
       }
     ],
     "chorus": [

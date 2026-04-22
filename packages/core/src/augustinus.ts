@@ -178,7 +178,6 @@ function applyModel(
       const nextSyllable = gabcOutputArray[i + 1] || '';
 
       if (currentSyllable.includes('_')) {
-        console.log(currentSyllable, nextSyllable);
         gabcOutputArray[i] = currentSyllable.replace(/[@_]/g, '') + '~' + nextSyllable;
         gabcOutputArray.splice(i + 1, 1);
         i--;
@@ -456,7 +455,6 @@ export default function generateGabc(
     }
     if (parametersObject.separateStanzas && parametersObject.repeatIntonation) {
       for (const [idx, versicle] of versicles.entries()) {
-        console.log(versicle);
         if (chorus && idx < 1) {
           versicle[versicle.length - 1] += ' (Z)';
           continue;
