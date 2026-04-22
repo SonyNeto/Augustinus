@@ -338,8 +338,7 @@ export default function generateGabc(input: string, modelObject: Model, paramete
         let pattern = model.patterns.find(p => p.symbol === lastChar);
 
         if (chorus && idx < 2) {
-            pattern = model.chorus?.find(p => p.symbol === lastChar) || pattern;
-            console.log(input, lastChar, pattern);
+            pattern = model.chorus?.find(p => p.symbol === lastChar || p.symbol === "") || pattern;
         }
 
         if (pattern) {
@@ -363,11 +362,16 @@ export default function generateGabc(input: string, modelObject: Model, paramete
             }
         }
         if (parametersObject.separateStanzas && parametersObject.repeatIntonation) {
-            for (const versicle of versicles) {
+            for (const [idx, versicle] of versicles.entries()) {
+                console.log(versicle);
+                if (chorus && idx < 1) {
+                    versicle[versicle.length - 1] += " (Z)"
+                    continue;
+                }
                 if (versicleIndex % 2 !== 0) {
                     let count = 0;
                     versicle[0] = versicle[0].replace(/\([a-zA-Z]\)/g, match => count < 2 ? intonnationNotes[count++] : match);
-                    if (versicleIndex > 1) versicle[0] = "<c>" + stanzaIndex + ".</c> " + versicle[0]; // numero versiculos
+                    if (versicleIndex > 1 || chorus) versicle[0] = "<c>" + stanzaIndex + ".</c> " + versicle[0]; // numero versiculos
                     versicleIndex++;
                     stanzaIndex++;
                 } else {

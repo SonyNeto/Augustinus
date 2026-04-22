@@ -326,11 +326,11 @@
         "chorus": [
             {
                 "symbol": "*",
-                "gabc": "(h) (hr hr hr) (hr1) (g) (gr) (::)"
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g) (:)"
             },
             {
-                "symbol": "%",
-                "gabc": "(e) (er er er) (f) (gr1) (gr) (f) (e) (dr1) (dr) (dr) (::)"
+                "symbol": "",
+                "gabc": "(e) (er er er) (f) (gr1) (gr) (f) (e) (dr1) (dr) (d) (::)"
             }
         ],
         "find": [],
@@ -358,6 +358,16 @@
                 "gabc": "(h) (hr hr hr) (g) (f) (gr1) (gr) (gvFED.) (::)"
             }
         ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(e) (er er er) (f) (gr1) (gr) (f) (e) (dr1) (dr) (d) (::)"
+            }
+        ],
         "find": [],
         "replace": []
     },
@@ -381,6 +391,16 @@
             {
                 "symbol": "\n",
                 "gabc": "(h) (hr hr hr) (g) (f) (gr1) (gfr1) (d.) (::)"
+            }
+        ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(e) (er er er) (f) (gr1) (gr) (f) (e) (dr1) (dr) (d) (::)"
             }
         ],
         "find": [],
@@ -408,6 +428,16 @@
                 "gabc": "(h) (hr hr hr) (g) (f) (ghr1) (gr) (gf..) (gvFED.) (::)"
             }
         ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(e) (er er er) (f) (gr1) (gr) (f) (e) (dr1) (dr) (d) (::)"
+            }
+        ],
         "find": [],
         "replace": []
     },
@@ -431,6 +461,16 @@
             {
                 "symbol": "\n",
                 "gabc": "(h) (hr hr hr) (g) (f) (ghr1) (gr) (g.) (::)"
+            }
+        ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(e) (er er er) (f) (gr1) (gr) (f) (e) (dr1) (dr) (d) (::)"
             }
         ],
         "find": [],
@@ -458,6 +498,16 @@
                 "gabc": "(h) (hr hr hr) (g) (f) (gr1) (gr) (ghg.) (::)"
             }
         ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(e) (er er er) (f) (gr1) (gr) (f) (e) (dr1) (dr) (d) (::)"
+            }
+        ],
         "find": [],
         "replace": []
     },
@@ -481,6 +531,16 @@
             {
                 "symbol": "\n",
                 "gabc": "(h) (hr hr hr) (g) (f) (hr1) (gr) (g.) (::)"
+            }
+        ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(e) (er er er) (f) (gr1) (gr) (f) (e) (dr1) (dr) (d) (::)"
             }
         ],
         "find": [],
@@ -508,6 +568,16 @@
                 "gabc": "(h) (hr hr hr) (g) (f) (gr1) (hr) (h.) (::)"
             }
         ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(e) (er er er) (f) (gr1) (gr) (f) (e) (dr1) (dr) (d) (::)"
+            }
+        ],
         "find": [],
         "replace": []
     },
@@ -531,6 +601,16 @@
             {
                 "symbol": "\n",
                 "gabc": "(h) (hr hr hr) (g) (f) (gr1) (gr) (goh..) (::)"
+            }
+        ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(h) (hr hr hr) (hr1) (gr) (g) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(e) (er er er) (f) (gr1) (gr) (f) (e) (dr1) (dr) (d) (::)"
             }
         ],
         "find": [],
@@ -558,6 +638,16 @@
                 "gabc": "(h) (hr hr hr) (g) (er1) (efr1) (f.) (::)"
             }
         ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(f) (fr fr fr) (e) (f) (hr1) (gr) (g) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(g) (gr gr gr) (g) (ir1) (ir) (h) (g) (fr1) (fr) (f) (::)"
+            }
+        ],
         "find": [],
         "replace": []
     },
@@ -581,6 +671,16 @@
             {
                 "symbol": "\n",
                 "gabc": "(i) (ir ir ir) (h) (i) (j) (hr1) (ir) (i.) (::)"
+            }
+        ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(f) (fr fr fr) (e) (f) (hr1) (gr) (g) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(g) (gr gr gr) (g) (ir1) (ir) (h) (g) (fr1) (fr) (f) (::)"
             }
         ],
         "find": [],
@@ -608,10 +708,20 @@
                 "gabc": "(i) (ir ir ir) (ir1) (hr) (h.) (;)"
             }
         ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(f) (fr fr fr) (e) (f) (hr1) (gr) (g) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(g) (gr gr gr) (g) (ir1) (ir) (h) (g) (fr1) (fr) (f) (::)"
+            }
+        ],
         "find": [],
         "replace": []
     },
-      {
+    {
         "name": "2*d",
         "type": "salmo",
         "tom": "2*d",
@@ -631,6 +741,16 @@
             {
                 "symbol": "\n",
                 "gabc": "(i) (ir ir ir) (h) (i) (j) (hr1) (fr) (f.) (::)"
+            }
+        ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(f) (fr fr fr) (e) (f) (hr1) (gr) (g) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(g) (gr gr gr) (g) (ir1) (ir) (h) (g) (fr1) (fr) (f) (::)"
             }
         ],
         "find": [],
@@ -658,6 +778,16 @@
                 "gabc": "(i) (ir ir ir) (jr1) (hr) (h) (jr1) (jr) (i.) (::)"
             }
         ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(g) (gr gr gr) (g) (h) (jr1) (ir) (i) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(h) (hr hr hr) (h) (g) (f) (er1) (er) (e) (::)"
+            }
+        ],
         "find": [],
         "replace": []
     },
@@ -681,6 +811,16 @@
             {
                 "symbol": "\n",
                 "gabc": "(i) (ir ir ir) (jr1) (hr) (h) (jr1) (jr) (ih..) (::)"
+            }
+        ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(g) (gr gr gr) (g) (h) (jr1) (ir) (i) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(h) (hr hr hr) (h) (g) (f) (er1) (er) (e) (::)"
             }
         ],
         "find": [],
@@ -708,6 +848,16 @@
                 "gabc": "(i) (ir ir ir) (jr1) (hr) (hi) (hr1) (gr) (goh..) (::)"
             }
         ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(g) (gr gr gr) (g) (h) (jr1) (ir) (i) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(h) (hr hr hr) (h) (g) (f) (er1) (er) (e) (::)"
+            }
+        ],
         "find": [],
         "replace": []
     },
@@ -731,6 +881,16 @@
             {
                 "symbol": "\n",
                 "gabc": "(i) (ir ir ir) (jr1) (hr) (hi) (hr1) (gr) (g.) (::)"
+            }
+        ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(g) (gr gr gr) (g) (h) (jr1) (ir) (i) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(h) (hr hr hr) (h) (g) (f) (er1) (er) (e) (::)"
             }
         ],
         "find": [],
@@ -758,6 +918,16 @@
                 "gabc": "(h) (hr hr hr) (hr1) (gr) (g.) (::)"
             }
         ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(e) (er er er) (f) (g) (hr1) (gr) (g) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(f) (fr fr fr) (d) (f) (er1) (er) (e) (::)"
+            }
+        ],
         "find": [],
         "replace": []
     },
@@ -781,6 +951,16 @@
             {
                 "symbol": "\n",
                 "gabc": "(h) (hr hr hr) (g) (h) (ih) (gr1) (gfr1) (e.) (::)"
+            }
+        ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(e) (er er er) (f) (g) (hr1) (gr) (g) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(f) (fr fr fr) (d) (f) (er1) (er) (e) (::)"
             }
         ],
         "find": [],
@@ -808,6 +988,16 @@
                 "gabc": "(h) (hr hr hr) (g) (h) (i) (gr1) (hr) (h.) (::)"
             }
         ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(e) (er er er) (f) (g) (hr1) (gr) (g) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(f) (fr fr fr) (d) (f) (er1) (er) (e) (::)"
+            }
+        ],
         "find": [],
         "replace": []
     },
@@ -831,6 +1021,16 @@
             {
                 "symbol": "\n",
                 "gabc": "(g) (gr gr gr) (hr1) (fr) (f) (gr1) (er) (e.) (::)"
+            }
+        ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(e) (er er er) (f) (g) (hr1) (gr) (g) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(f) (fr fr fr) (d) (f) (er1) (er) (e) (::)"
             }
         ],
         "find": [],
@@ -858,6 +1058,16 @@
                 "gabc": "(h) (hr hr hr) (ir1) (gr) (g) (hr1) (fr) (f.) (::)"
             }   
         ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(h) (hr hr hr) (f) (gxg) (hr1) (hr) (h) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(e) (er er er) (gxg) (f) (dr1) (dr) (d) (::)"
+            }
+        ],
         "find": [],
         "replace": []
     },
@@ -882,6 +1092,16 @@
                 "symbol": "\n",
                 "gabc": "(h) (hr hr hr) (ir1) (gxgr) (gxg) (hr1) (fr) (f.) (::)"
             }   
+        ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(h) (hr hr hr) (f) (gxg) (hr1) (hr) (h) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(e) (er er er) (gxg) (f) (dr1) (dr) (d) (::)"
+            }
         ],
         "find": [],
         "replace": []
@@ -908,6 +1128,16 @@
                 "gabc": "(h) (hr hr hr) (f) (gh) (gr1) (fr) (f.) (::)"
             }   
         ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(f) (fr fr fr) (g) (hr1) (gr) (g) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(f) (fr fr fr) (d) (f) (gr1) (fr) (f) (::)"
+            }
+        ],
         "find": [],
         "replace": []
     },
@@ -932,6 +1162,16 @@
                 "symbol": "\n",
                 "gabc": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (gf..) (::)"
             }   
+        ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(e) (er er er) (g) (h) (ir1) (ir) (i) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(h) (hr hr hr) (g) (er1) (er) (e) (::)"
+            }
         ],
         "find": [],
         "replace": []
@@ -958,6 +1198,16 @@
                 "gabc": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (gh..) (::)"
             }   
         ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(e) (er er er) (g) (h) (ir1) (ir) (i) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(h) (hr hr hr) (g) (er1) (er) (e) (::)"
+            }
+        ],
         "find": [],
         "replace": []
     },
@@ -982,6 +1232,16 @@
                 "symbol": "\n",
                 "gabc": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (ih..) (::)"
             }   
+        ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(e) (er er er) (g) (h) (ir1) (ir) (i) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(h) (hr hr hr) (g) (er1) (er) (e) (::)"
+            }
         ],
         "find": [],
         "replace": []
@@ -1008,6 +1268,16 @@
                 "gabc": "(i) (ir ir ir) (jr1) (ir) (i) (hr1) (hr) (goi..) (::)"
             }   
         ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(e) (er er er) (g) (h) (ir1) (ir) (i) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(h) (hr hr hr) (g) (er1) (er) (e) (::)"
+            }
+        ],
         "find": [],
         "replace": []
     },
@@ -1031,6 +1301,16 @@
             {
                 "symbol": "\n",
                 "gabc": "(j) (jr jr jr) (i) (j) (hr1) (gr) (g.) (::)"
+            }
+        ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(h) (hr hr hr) (g) (fr1) (fr) (f) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(d) (dr dr dr) (e) (fr1) (er) (e) (::)"
             }
         ],
         "find": [],
@@ -1058,6 +1338,16 @@
                 "gabc": "(j) (jr jr jr) (i) (j) (hr1) (gr) (ghg.) (::)"
             }
         ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(h) (hr hr hr) (g) (fr1) (fr) (f) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(d) (dr dr dr) (e) (fr1) (er) (e) (::)"
+            }
+        ],
         "find": [],
         "replace": []
     },
@@ -1081,6 +1371,16 @@
             {
                 "symbol": "\n",
                 "gabc": "(j) (jr jr jr) (h) (j) (kr1) (jr) (j.) (::)"
+            }
+        ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(h) (hr hr hr) (g) (fr1) (fr) (f) (:)"
+            },
+            {
+                "symbol": "",
+                "gabc": "(d) (dr dr dr) (e) (fr1) (er) (e) (::)"
             }
         ],
         "find": [],
