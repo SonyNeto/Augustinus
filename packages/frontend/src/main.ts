@@ -33,6 +33,8 @@ const customStartInput = document.getElementById('custom-start') as HTMLInputEle
 
 const modelOption = document.getElementById('model-option') as HTMLDivElement;
 const psalmControl = document.getElementById('psalm-controls') as HTMLDivElement;
+const chorus = document.getElementById('chorus') as HTMLTextAreaElement;
+const chorusTextArea = document.getElementById('chorus-text') as HTMLTextAreaElement;
 
 function handleModelChange(event: Event) {
   const target = event.target as HTMLSelectElement;
@@ -83,6 +85,8 @@ function handlePsalmOptions() {
 
   modelOption.style.display = psalmSelect.value !== '' ? 'none' : 'block';
   psalmControl.style.display = isPsalm || psalmSelect.value !== '' ? 'block' : 'none';
+  chorus.style.display = isPsalm || psalmSelect.value !== '' ? 'block' : 'none';
+  chorusTextArea.style.display = isPsalm || psalmSelect.value !== '' ? 'block' : 'none';
 }
 
 function gabcToSvg(gabc: string) {
@@ -120,6 +124,7 @@ function generate() {
   }
 
   const inputText = inputTextArea.value;
+  const chorusText = chorusTextArea.value;
 
   if (!selectedModel || !inputText) {
     return;
@@ -142,7 +147,7 @@ function generate() {
     header: metadataTextArea.value,
   };
 
-  const gabc = generateGabc(inputText, selectedModel, parameters);
+  const gabc = generateGabc(inputText, selectedModel, parameters, chorusText);
   gabcTextArea.value = gabc;
 
   gabcToSvg(gabc);

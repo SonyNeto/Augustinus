@@ -323,6 +323,16 @@
                 "gabc": "(h) (hr hr hr) (g) (f) (ghr1) (gr) (gvFED.) (::)"
             }
         ],
+        "chorus": [
+            {
+                "symbol": "*",
+                "gabc": "(h) (hr hr hr) (hr1) (g) (gr) (::)"
+            },
+            {
+                "symbol": "%",
+                "gabc": "(e) (er er er) (f) (gr1) (gr) (f) (e) (dr1) (dr) (dr) (::)"
+            }
+        ],
         "find": [],
         "replace": []
     },

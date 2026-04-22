@@ -258,6 +258,7 @@ export interface Model {
     start: string;
     default: string;
     patterns: Pattern[];
+    chorus?: Pattern[];
     find: string[];
     replace: string[];
 }
@@ -279,7 +280,8 @@ export interface Parameters {
     header?: string;
 }
 
-export default function generateGabc(input: string, modelObject: Model, parametersObject: Parameters): string {
+export default function generateGabc(input: string, modelObject: Model, parametersObject: Parameters, chorus?: string): string {
+    if (chorus) input = chorus + '\n' + input;
     let model = { ...modelObject };
 
     let psalm = model.type === "salmo" ? true : false;
@@ -316,7 +318,7 @@ export default function generateGabc(input: string, modelObject: Model, paramete
     const chunks: string[] = input.split(parametersObject.separator).map(s => s.trim()).filter(chunk => chunk && chunk !== parametersObject.separator);
     let gabcLines: string[] = [];
 
-    for (const chunk of chunks) {
+    for (const [idx, chunk] of chunks.entries()) {
         if (modelObject.type === "prefacio" && modelObject.tom === "solene" && chunk == "Por isso,") {
             gabcLines.push("Por(f) is(ef)so,(f) (,) ");
             continue
@@ -333,10 +335,16 @@ export default function generateGabc(input: string, modelObject: Model, paramete
         }
 
         const lastChar = chunk.slice(-1);
-        const pattern = model.patterns.find(p => p.symbol === lastChar);
+        let pattern = model.patterns.find(p => p.symbol === lastChar);
+
+        if (chorus && idx < 2) {
+            pattern = model.chorus?.find(p => p.symbol === lastChar) || pattern;
+            console.log(input, lastChar, pattern);
+        }
+
         if (pattern) {
             const text = model.type === 'leitura' ? chunk.trim() : chunk.slice(0, -1).trim();
-            gabcLines.push(applyModel(text, pattern.gabc, psalm, parametersObject.doElision))
+            gabcLines.push(applyModel(text, pattern.gabc, psalm, parametersObject.doElision));
         } else {
             gabcLines.push(applyModel(chunk.trim() + (parametersObject.removeSeparator === false ? parametersObject.separator : ''), model.default, psalm, parametersObject.doElision));
         }
