@@ -90,7 +90,6 @@ function handlePsalmOptions() {
 }
 
 function gabcToSvg(gabc: string) {
-  
   gabc = gabc.replaceAll(/\{([aeiou])~([aeiou]\})/gi, '{$1_$2}');
 
   if (renderer === null) {
@@ -180,7 +179,6 @@ handlePsalmOptions();
 const exportSvgButton = document.getElementById('export-svg') as HTMLButtonElement;
 const exportPngButton = document.getElementById('export-png') as HTMLButtonElement;
 const exportPdfButton = document.getElementById('export-pdf') as HTMLButtonElement;
-
 
 exportSvgButton.addEventListener('click', () => {
   if (renderer) {

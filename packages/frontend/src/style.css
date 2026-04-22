@@ -27,11 +27,11 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background-color: #2F2A20;
-  color: #F5F0E1;
+  background-color: #2f2a20;
+  color: #f5f0e1;
 }
 label {
-  color: #F5F0E1;
+  color: #f5f0e1;
 }
 #app {
   display: flex;
@@ -42,7 +42,7 @@ label {
 h1 {
   margin: 0;
   font-size: 1.5rem;
-  color: #F5F0E1;
+  color: #f5f0e1;
 }
 
 main {
@@ -56,8 +56,8 @@ main {
   flex: 0 0 650px;
   padding: 1rem;
   overflow-y: auto;
-  background-color: #2F2A20;
-  border-right: 1px solid #9B5B4D;
+  background-color: #2f2a20;
+  border-right: 1px solid #9b5b4d;
   box-sizing: border-box;
 }
 
@@ -65,27 +65,27 @@ main {
   flex: 1 0 auto;
   padding: 2rem;
   overflow-y: auto;
-  background-color: #4A443A;
+  background-color: #4a443a;
 }
 
 textarea {
   width: 100%;
   margin-bottom: 1rem;
-  border: 1px solid #9B5B4D;
+  border: 1px solid #9b5b4d;
   border-radius: 4px;
   padding: 0.5rem;
   font-size: 1em;
   font-family: 'EB Garamond';
   box-sizing: border-box;
-  background-color: #F5F0E1;
-  color: #2F2A20;
+  background-color: #f5f0e1;
+  color: #2f2a20;
 }
 
 button {
   width: 100%;
   padding: 0.75rem;
-  background: #9B5B4D;
-  color: #F5F0E1;
+  background: #9b5b4d;
+  color: #f5f0e1;
   border: none;
   cursor: pointer;
   border-radius: 4px;
@@ -94,11 +94,11 @@ button {
 }
 
 button:hover {
-  background: #4A443A;
+  background: #4a443a;
 }
 
 details {
-  border: 1px solid #9B5B4D;
+  border: 1px solid #9b5b4d;
   border-radius: 4px;
   margin-bottom: 1rem;
 }
@@ -107,10 +107,9 @@ summary {
   cursor: pointer;
   font-weight: bold;
   padding: 0.75rem;
-  background: #4A443A;
-  color: #F5F0E1;
+  background: #4a443a;
+  color: #f5f0e1;
 }
-
 
 .options-grid {
   display: grid;
@@ -129,14 +128,14 @@ summary {
 }
 
 #psalm-controls {
-  border-top: 1px solid #9B5B4D;
+  border-top: 1px solid #9b5b4d;
   padding-top: 1rem;
-  padding-left:1rem;
+  padding-left: 1rem;
   margin-top: 1rem;
 }
 
 #psalm-controls h3 {
-  color: #F5F0E1;
+  color: #f5f0e1;
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: 1.2em;
@@ -151,7 +150,6 @@ summary {
   grid-column: span 2;
 }
 
-
 #psalm-controls > div {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
@@ -163,7 +161,7 @@ summary {
   min-height: 297mm;
   margin: 0 auto;
   padding: 2cm;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #chant-container {
@@ -174,7 +172,8 @@ summary {
   body * {
     visibility: hidden;
   }
-  .a4-container, .a4-container * {
+  .a4-container,
+  .a4-container * {
     visibility: visible;
   }
   .a4-container {
@@ -191,9 +190,9 @@ summary {
 header {
   display: flex;
   align-items: center;
-  background: #4A443A;
+  background: #4a443a;
   padding: 1rem;
-  border-bottom: 1px solid #9B5B4D;
+  border-bottom: 1px solid #9b5b4d;
   justify-content: space-between; /* Espalha os grupos para os cantos */
 }
 
@@ -205,18 +204,18 @@ header .logo {
 }
 
 .left-content {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 #docs {
-  margin-left:10%;
+  margin-left: 10%;
 }
 #docs a {
-    color: #F5F0E1;
-    text-decoration: none;
+  color: #f5f0e1;
+  text-decoration: none;
 }
 
 #docs a:hover {
-    color: #d6d2c5;
-    text-decoration: underline;
+  color: #d6d2c5;
+  text-decoration: underline;
 }

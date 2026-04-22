@@ -16,13 +16,13 @@ export default defineConfig({
       targets: [
         {
           src: 'exsurge.min.js',
-          dest: ''
+          dest: '',
         },
         {
           src: 'exsurge.min.js.map',
-          dest: ''
-        }
-      ]
-    })
-  ]
+          dest: '',
+        },
+      ],
+    }),
+  ],
 });

@@ -6,7 +6,8 @@
   "scripts": {
     "start:frontend": "bun run --filter=augustinus-frontend dev",
     "start:cli": "bun run --filter=@augustinus/cli start",
-    "start:api": "bun run --filter=@augustinus/api start"
+    "start:api": "bun run --filter=@augustinus/api start",
+    "format": "prettier --write ."
   },
   "workspaces": [
     "packages/*"
@@ -14,6 +15,7 @@
   "devDependencies": {
     "@types/node": "^20.0.0",
     "esbuild": "^0.25.9",
+    "prettier": "3.8.3",
     "typescript": "^5.0.0"
   },
   "dependencies": {

@@ -10,10 +10,10 @@ Acesse a interface do programa aqui: [augustinus.liturgiacantada.com.br](https:/
 
 ## Funcionalidades
 
-*   **Geração de GABC:** Converte texto em notação GABC com base em modelos predefinidos ou personalizados.
-*   **Separação de Sílabas:** Posiciona corretamente as notas nas sílabas usando a biblioteca `separador-silabas`.
-*   **Múltiplas Interfaces:** Use-o através da web, CLI.
-*   **Modelos Personalizáveis:** Defina seus próprios modelos musicais em formato JSON.
+- **Geração de GABC:** Converte texto em notação GABC com base em modelos predefinidos ou personalizados.
+- **Separação de Sílabas:** Posiciona corretamente as notas nas sílabas usando a biblioteca `separador-silabas`.
+- **Múltiplas Interfaces:** Use-o através da web, CLI.
+- **Modelos Personalizáveis:** Defina seus próprios modelos musicais em formato JSON.
 
 ## Pacotes
 
@@ -78,18 +78,16 @@ bun run start:cli -- -t "Seu texto aqui" -m "Oração tom solene"
 
 **Opções:**
 
-*   `-t, --text`: Texto de entrada para converter em GABC.
-*   `-i, --input`: Caminho do arquivo de entrada.
-*   `-o, --output`: Caminho do arquivo de saída.
-*   `-m, --model`: Nome do modelo a ser usado.
-*   `--addOptionalStart`: Adicionar início opcional.
-*   `--addOptionalEnd`: Adicionar final opcional.
-*   `--removeNumbers`: Remover números da entrada.
-*   `--removeParenthesis`: Remover parênteses e seu conteúdo da entrada.
-*   `--separator`: Separador entre frases.
-*   `--removeSeparator`: Se for falso, o caractere separador será usado para unir as linhas GABC.
-
-
+- `-t, --text`: Texto de entrada para converter em GABC.
+- `-i, --input`: Caminho do arquivo de entrada.
+- `-o, --output`: Caminho do arquivo de saída.
+- `-m, --model`: Nome do modelo a ser usado.
+- `--addOptionalStart`: Adicionar início opcional.
+- `--addOptionalEnd`: Adicionar final opcional.
+- `--removeNumbers`: Remover números da entrada.
+- `--removeParenthesis`: Remover parênteses e seu conteúdo da entrada.
+- `--separator`: Separador entre frases.
+- `--removeSeparator`: Se for falso, o caractere separador será usado para unir as linhas GABC.
 
 ## Contribuindo
 
@@ -97,15 +95,15 @@ Contribuições são bem-vindas! Sinta-se à vontade para enviar um pull request
 
 ## Agradecimentos
 
-*   **[Danillo Del Chiaro](https://www.instagram.com/danillodelchiaro)**: por patrocinar o projeto.
-*   **[Prof. Dr. Clayton Dias](https://claytondias.com)**: pela revisão e direcionamento intelectual do projeto.
+- **[Danillo Del Chiaro](https://www.instagram.com/danillodelchiaro)**: por patrocinar o projeto.
+- **[Prof. Dr. Clayton Dias](https://claytondias.com)**: pela revisão e direcionamento intelectual do projeto.
 
 Um agradecimento especial à **[Neumz](https://neumz.com/)** e às pessoas que tornaram o **Scribio** (nosso renderizador de SVG) possível:
 
-*   **[Andrew Hinkley](https://github.com/ahinkley)**, **Dominique Crochu** e **John Anderson** do time Neumz.
+- **[Andrew Hinkley](https://github.com/ahinkley)**, **Dominique Crochu** e **John Anderson** do time Neumz.
 
-*   **[Joshua Guenther](https://github.com/joshuaguenther)**: desenvolvedor do Scrib.io.
-*   **Matthias Bry**: por escrever a especificação e depurar o Scrib.io.
+- **[Joshua Guenther](https://github.com/joshuaguenther)**: desenvolvedor do Scrib.io.
+- **Matthias Bry**: por escrever a especificação e depurar o Scrib.io.
 
 E, claro, a todos os contribuidores do projeto **[Gregorio](https://github.com/gregorio-project/gregorio)**.
 
